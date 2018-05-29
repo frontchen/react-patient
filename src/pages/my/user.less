@@ -1,0 +1,643 @@
+@import '../../styles/Base.less';
+
+/***********************我的设置首页********************/
+
+.mydata-set-list {
+  .mydata-set-item {
+    min-height: 88 * @hd;
+    margin: 15 * @hd 0 20 * @hd;
+
+    box-sizing: border-box;
+    .mydata-set-item-card {
+      min-height: 88 * @hd;
+      .am-list-body {
+        min-height: 88 * @hd;
+        .am-list-item {
+          min-height: 88 * @hd;
+          margin-right: 12 * @hd;
+          .am-list-line {
+            padding: 0;
+            .am-list-content {
+              .mydata-current {
+                display: flex;
+                img {
+                  height: 64 * @hd;
+                  width: 64 * @hd;
+                  border-radius: 4 * @hd;
+                  border: 1 * @hd solid extract(@whiteColor, 2);
+                }
+                .mydata-person-card {
+                  display: flex;
+                  flex-direction: column;
+                  margin-left: 14 * @hd;
+
+                  justify-content: center;
+                  .mydata-person-name {
+                    font-size: 17 * @hd;
+                    color: extract(@blackColor, 1);
+                  }
+                  .mydata-phone-box {
+                    display: flex;
+                    margin-top: 5 * @hd;
+                    color: extract(@blackColor, 2);
+                    font-size: 14 * @hd;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .mydata-set-item-option {
+    min-height: 44 * @hd;
+    .am-list {
+      min-height: 44 * @hd;
+      .am-list-body {
+        min-height: 44 * @hd;
+        .am-list-item {
+          .am-list-line-multiple {
+            padding: 0;
+            min-height: 44 * @hd;
+          }
+        }
+      }
+    }
+  }
+  .mydata-set-item-bottom {
+    margin: 20 * @hd 0;
+    .am-list-item {
+      .am-list-line-multiple {
+        border-bottom: 1 * @hd solid extract(@whiteColor, 2);
+        padding: 0 15 * @hd 0 0;
+      }
+      .am-list-line-multiple:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .am-list-body::before,
+    .am-list-body::after {
+      display: none;
+    }
+  }
+}
+
+/***********************个人信息********************/
+
+.user-person-detail {
+  .user-person-item {
+    padding: 0 15 * @hd;
+    min-height: 85 * @hd;
+    margin-top: 15 * @hd;
+    border-top: 1 * @hd solid extract(@whiteColor, 7);
+    display: flex;
+    background: extract(@whiteColor, 1);
+    justify-content: space-between;
+    align-items: center;
+    .user-person-current {
+      font-size: 17 * @hd;
+      color: extract(@blackColor, 1);
+    }
+    .user-person-img {
+      margin-right: 10 * @hd;
+      img {
+        height: 64 * @hd;
+        width: 64 * @hd;
+        border-radius: 4 * @hd;
+        border: 1 * @hd solid extract(@whiteColor, 2);
+      }
+    }
+  }
+  .user-person-item-center {
+    margin-bottom: 20 * @hd;
+    border-bottom: 1 * @hd solid extract(@whiteColor, 7);
+  }
+  .user-person-item-bottom {
+    border-top: 1 * @hd solid extract(@whiteColor, 7);
+    border-bottom: 1 * @hd solid extract(@whiteColor, 7);
+  }
+  .am-list-line {
+    border-top: 1 * @hd solid extract(@whiteColor, 2);
+    .am-list-content {
+      flex: 3;
+    }
+    .am-list-extra {
+      flex: 7;
+    }
+  }
+  .am-list-body::before,
+  .am-list-body::after {
+    display: none !important;
+  }
+  .user-person-item-option {
+    .am-list-body {
+      .am-list-item {
+        min-height: 44 * @hd;
+        .am-list-line-multiple {
+          padding: 0 15 * @hd 0 0;
+          min-height: 44 * @hd;
+          box-sizing: border-box;
+        }
+        .am-list-line::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+/***********************三甲科普咨询详情********************/
+.user-zixun {
+  position: relative;
+  background: extract(@whiteColor, 1);
+  height: 100%;
+  overflow-y: auto;
+  .user-sanjia-info {
+    padding: 17 * @hd 20 * @hd;
+    .user-sanjia-info-title {
+      font-size: 24 * @hd;
+      color: extract(@blackColor, 3);
+      line-height: 1.5;
+    }
+    .user-author-info {
+      .am-list-item {
+        padding-left: 0;
+
+        .user-author-log-box {
+          img {
+            width: 24 * @hd;
+            height: 24 * @hd;
+            border-radius: 50%;
+          }
+          span {
+            margin-left: 11 * @hd;
+            font-size: 14 * @hd;
+            color: extract(@blackColor, 2);
+          }
+        }
+        .am-list-extra {
+          font-size: 14 * @hd;
+          color: extract(@blackColor, 2);
+        }
+      }
+      .am-list-body::before,
+      .am-list-body::after {
+        display: none;
+      }
+    }
+    .user-sanjia-zixun-info {
+      min-height: 200 * @hd;
+    }
+    .user-sanjia-read-num {
+      font-size: 12 * @hd;
+      color: extract(@blackColor, 2);
+      span {
+        margin-left: 11 * @hd;
+        margin-top: 24 * @hd;
+      }
+    }
+    .user-read-like-box {
+      display: flex;
+      justify-content: center;
+      margin: 29 * @hd 0 30 * @hd 0;
+      .user-read-like-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .user-read-liked,
+        .user-read-like {
+          width: 50 * @hd;
+          height: 50 * @hd;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-width: 1 * @hd;
+          border-style: solid;
+
+          img {
+            width: 20 * @hd;
+            height: auto;
+          }
+        }
+        .user-read-like-num {
+          margin-top: 11 * @hd;
+        }
+      }
+      .liked {
+        .user-read-liked {
+          border-color: extract(@blackColor, 2);
+        }
+        .user-read-like-num {
+          color: extract(@blackColor, 2);
+        }
+      }
+      .like {
+        .user-read-like {
+          border-color: extract(@redColor, 3);
+        }
+        .user-read-like-num {
+          color: extract(@redColor, 3);
+        }
+      }
+    }
+  }
+
+  //热门评论
+  .user-hot-comment {
+    padding: 0 20 * @hd 50 * @hd 12 * @hd;
+    .user-hot-comment-title {
+      font-size: 16 * @hd;
+      font-weight: bold;
+      color: extract(@blackColor, 3);
+    }
+    .user-hot-comment-content {
+      margin-top: 30 * @hd;
+      .am-card {
+        min-height: auto;
+        padding-bottom: 30 * @hd;
+        .am-card-header {
+          position: relative;
+          padding: 0;
+          .am-card-header-content {
+            .user-hot-comment-logo {
+              align-self: flex-start;
+              img {
+                height: 35 * @hd;
+                width: 35 * @hd;
+                border-radius: 50%;
+              }
+            }
+            .user-hot-comment-cart {
+              margin-left: 11 * @hd;
+
+              .user-hot-comment-namedate {
+                display: flex;
+                flex-direction: column;
+                min-height: 36 * @hd;
+                justify-content: space-between;
+                .user-hot-comment-nickname {
+                  font-size: 14 * @hd;
+                  color: extract(@blackColor, 10);
+                }
+                .user-hot-comment-nickdate {
+                  font-size: 12 * @hd;
+                  color: extract(@blackColor, 2);
+                }
+              }
+              .user-hot-comment-wapper {
+                margin-top: 15 * @hd;
+                font-size: 15 * @hd;
+                color: extract(@blackColor, 3);
+              }
+            }
+          }
+
+          .am-card-header-extra {
+            align-self: flex-start;
+            position: absolute;
+            top: 15 * @hd;
+            right: -7 * @hd;
+            .user-hot-comment-otherislike {
+              .user-hot-comment-otherlike,
+              .user-hot-comment-otherliked {
+                display: flex;
+                img {
+                  width: 14 * @hd;
+                  height: auto;
+                  align-self: flex-start;
+                  margin-left: 5 * @hd;
+                  position: relative;
+                  bottom: 4 * @hd;
+                }
+
+                .user-hot-comment-otherlike-num {
+                  font-size: 12 * @hd;
+                  color: extract(@blueColor, 4);
+                }
+                .user-hot-comment-otherliked-num {
+                  font-size: 12 * @hd;
+                  color: extract(@blackColor, 2);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .am-card-full::before,
+      .am-card-full::after {
+        display: none;
+      }
+    }
+  }
+
+  //热门评论输入框
+  .user-comment-input {
+    .user-write-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1 * @hd solid extract(@blackColor, 6);
+      border-bottom: 1 * @hd solid extract(@blackColor, 6);
+      max-height: 49 * @hd !important;
+      box-sizing: border-box;
+      .am-list-item {
+        margin-left: 12 * @hd;
+        padding: 0 !important;
+        max-height: 36 * @hd !important;
+        min-height: 36 * @hd !important;
+        flex: 1;
+        display: flex;
+
+        .am-textarea-label {
+          width: 22 * @hd;
+          max-height: 36 * @hd !important;
+          min-height: 36 * @hd !important;
+          display: flex;
+          align-items: center;
+        }
+        .am-textarea-control {
+          padding: 0;
+          max-height: 36 * @hd !important;
+          min-height: 36 * @hd !important;
+          flex: 1;
+          textarea {
+            background: extract(@whiteColor, 1);
+            padding: 7 * @hd 0 5 * @hd 7 * @hd;
+            border-radius: 3 * @hd;
+            line-height: 1.2;
+            box-sizing: border-box;
+            overflow-y: hidden;
+          }
+        }
+      }
+      .user-icon-bar {
+        min-height: 49 * @hd;
+        display: flex;
+        align-items: center;
+        .user-icon-pingjia,
+        .user-icon-star {
+          width: 20 * @hd;
+          height: auto;
+        }
+        .user-icon-pingjia {
+          margin-right: 28 * @hd;
+          margin-left: 28 * @hd;
+        }
+        .user-icon-star {
+          margin-right: 20 * @hd;
+        }
+      }
+    }
+  }
+}
+
+/***********************我的收藏列表********************/
+.user-favorite {
+  .user-favorite-list {
+    margin: 0 12 * @hd;
+    .user-favorite-list-info {
+      margin-top: 10 * @hd;
+      box-sizing: border-box;
+      img {
+        width: 50 * @hd;
+        width: 50 * @hd;
+      }
+      .am-card-header {
+        padding: 22 * @hd 16 * @hd 0;
+
+        .user-favorite-hospital-box {
+          margin-left: 13 * @hd;
+          .user-favorite-hospital-info {
+            line-height: 1.5;
+            font-size: 15 * @hd;
+            color: extract(@blackColor, 2);
+            .user-favorite-hospital-departments {
+              margin-left: 10 * @hd;
+            }
+          }
+        }
+      }
+      .am-card-body {
+        margin-top: 14 * @hd;
+        padding: 0 12 * @hd;
+        min-height: 30 * @hd;
+        .user-favorite-list-source {
+          font-size: 15 * @hd;
+          color: extract(@blackColor, 2);
+          .user-favorite-list-date {
+            margin-left: 10 * @hd;
+          }
+        }
+      }
+      .am-card-body::before {
+        display: none;
+      }
+    }
+    .user-favorite-list-info:first-child {
+      margin-top: 0;
+    }
+    .am-list {
+      margin-top: 10 * @hd;
+      .am-list-body {
+        padding: 22 * @hd 16 * @hd 0;
+        box-sizing: border-box;
+        .am-list-item {
+          min-height: auto;
+          .am-list-line::after {
+            display: none;
+          }
+          img {
+            width: 50 * @hd;
+            height: 50 * @hd;
+            align-self: flex-start;
+          }
+        }
+        .user-favorite-list-info {
+          align-items: flex-start;
+          .am-list-line {
+            padding: 0;
+            .am-list-content {
+              font-size: 16 * @hd;
+              color: extract(@blackColor, 1);
+              .user-favorite-hospital-info {
+                font-size: 15 * @hd;
+                color: extract(@blackColor, 2);
+                .user-favorite-hospital-departments {
+                  margin-left: 10 * @hd;
+                }
+              }
+            }
+          }
+        }
+        .user-favorite-list-source {
+          .am-list-content {
+            font-size: 14 * @hd;
+            color: extract(@blackColor, 2);
+            .user-favorite-list-date {
+              margin-left: 10 * @hd;
+            }
+          }
+        }
+      }
+    }
+    .am-list:first-child {
+      margin-top: 0;
+    }
+    .am-list-body::before,
+    .am-list-body::after {
+      display: none;
+    }
+  }
+}
+
+/***********************药物知识********************/
+.user-medicine {
+  .search_box {
+    .am-search-input {
+      border-radius: 20 * @hd;
+    }
+    .am-search-cancel {
+      min-width: 43 * @hd;
+      padding: 0;
+      text-align: center;
+      color: extract(@whiteColor, 1);
+      background: extract(@blueColor, 5);
+      margin-left: 12 * @hd;
+      border-radius: 10 * @hd;
+      font-size: 13 * @hd;
+    }
+  }
+  .user-medicine-list {
+    background: extract(@whiteColor, 1);
+    display: flex;
+    min-height: 118 * @hd;
+    margin-bottom: 10 * @hd;
+    padding: 15 * @hd 13 * @hd;
+    box-sizing: border-box;
+    .user-medicine-logo {
+      flex: 2.6;
+      img {
+        width: 90 * @hd;
+        height: 90 * @hd;
+      }
+    }
+
+    .user-medicine-detail-list {
+      flex: 7.4;
+      padding-left: 15 * @hd;
+      display: flex;
+      flex-direction: column;
+
+      min-height: 90 * @hd;
+      .ellipsis();
+      .user-medicine-name {
+        font-size: 16 * @hd;
+        color: extract(@blackColor, 3);
+        padding-left: 4 * @hd;
+      }
+      .user-medicine-detail {
+        .user-medicine-item {
+          font-size: 14 * @hd;
+          color: extract(@blackColor, 10);
+          margin-top: 8 * @hd;
+          .ellipsis();
+        }
+      }
+    }
+  }
+}
+
+//药物知识单品详情
+.user-medicine-wrapper {
+  background: extract(@whiteColor, 1);
+
+  .user-medicine-img {
+    padding-top: 10 * @hd;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .user-drugs-introduce {
+    .user-drugs-name {
+      font-size: 16 * @hd;
+      color: extract(@blackColor, 3);
+      padding: 18 * @hd 15 * @hd;
+      border-bottom: 1 * @hd solid extract(@whiteColor, 8);
+      display: flex;
+      justify-content: space-between;
+      .user-drugs-favorite-icon {
+        width: 34 * @hd;
+        height: 34 * @hd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: extract(@whiteColor, 7);
+        border-radius: 50%;
+        position: relative;
+        bottom: 10 * @hd;
+        img {
+          width: 20 * @hd;
+          height: 20 * @hd;
+        }
+      }
+    }
+  }
+}
+.user-drugs-text {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15 * @hd 15 * @hd;
+  .user-drugs--text-title {
+    font-size: 15 * @hd;
+    color: extract(@blueColor, 6);
+    padding: 15 * @hd 0 0 0;
+  }
+  .user-drugs--text-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 5 * @hd;
+    font-size: 14 * @hd;
+    color: extract(@blackColor, 10);
+    .user-medicine-item {
+      padding-top: 12 * @hd;
+      line-height: 1.5;
+    }
+  }
+}
+.user-how-use {
+  background: extract(@whiteColor, 1);
+  margin-top: 10 * @hd;
+  .user-how-use-content {
+    font-size: 14 * @hd;
+    color: extract(@blackColor, 10);
+    .user-how-use-item {
+      padding-top: 12 * @hd;
+      line-height: 1.5;
+    }
+  }
+}
+
+/***********************设置********************/
+.user-setting {
+  margin-top: 10 * @hd;
+  .am-list-body {
+    .am-list-content {
+      font-size: 16 * @hd;
+      display: flex;
+      color: extract(@blackColor, 3);
+      a {
+        flex: 1;
+        color: extract(@blackColor, 3);
+      }
+    }
+    .am-list-line::after {
+      display: none;
+    }
+  }
+}

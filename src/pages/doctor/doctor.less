@@ -1,0 +1,2661 @@
+@import '../../styles/Base.less';
+
+/***********************医生录主页********************/
+.doctor-index {
+  .doctor-index-list {
+    .am-list-header {
+      padding: 0;
+      .doctor-nav-list {
+        .am-list-item {
+          min-height: 55 * @hd;
+          border-bottom: 1 * @hd solid extract(@whiteColor, 4);
+          .am-list-line {
+            border-bottom: none;
+          }
+          .am-list-line::after {
+            display: none !important;
+          }
+          .am-list-content {
+            font-size: 16 * @hd;
+            color: extract(@blackColor, 3);
+          }
+        }
+        .am-list-item:last-child {
+          border-bottom: none;
+        }
+        img {
+          width: 25 * @hd;
+          height: 25 * @hd;
+        }
+      }
+    }
+
+    .am-list-view-scrollview {
+      margin: 0 !important;
+      border: none;
+    }
+    .am-list-body {
+      border: none;
+    }
+    .am-list-body::before {
+      display: none;
+    }
+    .doctor-list-style {
+      .doctor-area-list {
+        display: flex;
+        height: 35 * @hd;
+        width: 100%;
+        line-height: 35 * @hd;
+        padding-left: 12 * @hd;
+        background-color: extract(@whiteColor, 3);
+        font-size: 14 * @hd;
+        color: extract(@blackColor, 3);
+      }
+      .doctor-index-item {
+        min-height: 55 * @hd;
+        margin-top: 0;
+        .am-card {
+          border-bottom: 1 * @hd solid extract(@whiteColor, 4) !important;
+          min-height: 55 * @hd;
+          .am-card-header {
+            min-height: 55 * @hd;
+            .am-card-header-content {
+              min-height: 55 * @hd;
+              img {
+                width: 36 * @hd;
+                height: 36 * @hd;
+                align-self: center;
+                margin-top: 0;
+              }
+              .doctor-history-cart {
+                flex: 1;
+                width: 0;
+                align-self: center;
+                padding-bottom: 0;
+                border-bottom: none;
+                margin-top: 0;
+                .doctor-card-box {
+                  .ellipsis();
+                }
+                .doctor-name,
+                .doctor-good-at,
+                .doctor-call-date {
+                  .ellipsis();
+                  flex: 3;
+                  min-width: 56 * @hd !important;
+                }
+                .doctor-good-contents {
+                  padding-left: 0;
+                }
+              }
+            }
+          }
+        }
+        .am-card-full::before,
+        .am-card-full::after {
+          display: none !important;
+        }
+        .am-card-full {
+          border: none;
+        }
+      }
+    }
+
+    .am-list-body::before,
+    .am-list-body::after {
+      height: 0 !important;
+    }
+  }
+}
+
+/***********************去约医生********************/
+// .doctor-call-list {
+//   .doctor-list {
+//     .am-card-full::after {
+//       height: 0 !important;
+//     }
+//     .doctor-list-item {
+//       .am-card {
+//         min-height: 139 * @hd;
+//         .am-card-header {
+//           min-height: 95 * @hd;
+//           .am-card-header-content {
+//             min-height: 95 * @hd;
+//             .doctor-history-cart {
+//               margin-top: 13 * @hd;
+//               .doctor-card-box {
+//                 display: flex;
+//                 .doctor-job-box,
+//                 .doctor-good-contents {
+//                   flex: 1;
+//                   width: 0;
+//                   .ellipsis();
+//                 }
+//               }
+//               .doctor-card-box:last-child {
+//                 .doctor-call-date {
+//                   flex: 3;
+//                 }
+//                 .doctor-job-box {
+//                   flex: 7;
+//                   width: 0;
+//                   .ellipsis() !important;
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//     .doctor-name {
+//       font-weight: bold;
+//       font-size: 17 * @hd;
+//       color: extract(@blackColor, 3);
+//     }
+//   }
+// }
+
+//选择咨询时间段
+.advisory-select-list {
+  .am-list {
+    margin-top: 10 * @hd;
+    .am-list-body {
+      .am-list-item {
+        .am-list-line {
+          .am-list-extra {
+            flex: 1;
+            text-align: left;
+
+            .advisory-time-price {
+              display: flex;
+              justify-content: space-between;
+              font-size: 17 * @hd;
+              color: extract(@blackColor, 2);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//选择基本信息
+.advisory-select {
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  .advisory-select-options {
+    margin-top: 10 * @hd;
+    .am-list-body {
+      .am-list-item {
+        padding-left: 0;
+        margin-left: 15 * @hd;
+        border-bottom: 0.5 * @hd solid extract(@whiteColor, 5);
+        .am-list-content {
+          flex: 3;
+        }
+        .am-list-extra {
+          flex: 7;
+        }
+        .am-list-line::after {
+          display: none;
+        }
+      }
+      .advisory-select-item {
+        .am-list-content {
+          flex: 7;
+          font-size: 17 * @hd;
+          color: extract(@blackColor, 3);
+          span {
+            margin-left: 20 * @hd;
+            font-size: 14 * @hd;
+            color: extract(@blackColor, 2);
+          }
+        }
+        .am-list-extra {
+          flex: 3;
+        }
+      }
+    }
+    .am-list-body::before,
+    .am-list-body:after {
+      display: none;
+    }
+    .advisory-select-sex-box {
+      .am-list-extra {
+        padding-right: 15 * @hd;
+      }
+    }
+    .advisory-select-sex {
+      display: flex;
+      justify-content: flex-end;
+      .am-tag {
+        width: 37 * @hd;
+        height: 24 * @hd;
+        border-radius: 4 * @hd;
+        display: flex;
+        justify-content: center;
+        font-size: 15 * @hd;
+        color: extract(@whiteColor, 7);
+      }
+      .am-tag-active {
+        background: extract(@blueColor, 5);
+        color: extract(@whiteColor, 1);
+      }
+      .am-tag:first-child {
+        margin-right: 10 * @hd;
+      }
+      .advisory-select-info {
+        width: 37 * @hd;
+        height: 24 * @hd;
+        border-radius: 4 * @hd;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 15 * @hd;
+        color: extract(@whiteColor, 7);
+        border: 1 * @hd solid extract(@whiteColor, 7);
+      }
+      .advisory-select-info:first-child {
+        margin-right: 10 * @hd;
+      }
+    }
+    .advisory-info-mobile {
+      .am-list-extra {
+        min-width: 120 * @hd;
+        padding-right: 24 * @hd;
+      }
+    }
+    .advisory-time-price {
+      display: flex;
+      justify-content: flex-end;
+      .advosory-time {
+        margin-left: 10 * @hd;
+      }
+    }
+    .advisory-select-timedetail {
+      .am-list-line {
+        .am-list-content {
+          flex: 3;
+        }
+        .am-list-extra {
+          flex: 7;
+        }
+      }
+    }
+  }
+  .advisory-info-next-btn {
+    flex: 1;
+    margin-top: 20 * @hd;
+    display: flex;
+    min-height: 100 * @hd;
+    align-items: flex-end;
+    padding-bottom: 50 * @hd;
+    background: extract(@whiteColor, 1);
+    .am-button {
+      flex: 1;
+      margin: 0 15 * @hd;
+    }
+  }
+}
+.add-record-person {
+  .advisory-select-options:first-child {
+    margin-top: 0;
+  }
+  .advisory-select-options {
+    .am-list-body {
+      .am-list-content {
+        font-size: 15 * @hd;
+        color: extract(@blackColor, 2);
+      }
+      .am-list-extra {
+        font-size: 17 * @hd;
+        color: extract(@blackColor, 3);
+      }
+      .advisory-upload-wrapper {
+        min-height: 85 * @hd;
+        .advisory-upload-image {
+          height: 64 * @hd;
+          position: relative;
+          img {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 12 * @hd;
+            min-width: 64 * @hd;
+            min-height: 64 * @hd;
+          }
+          input {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+          }
+        }
+      }
+      .advisory-info-sex {
+        border-bottom: none;
+      }
+    }
+  }
+}
+//身高模态框
+.advisory-height-modal {
+  .am-picker-popup-body {
+    .am-picker {
+      padding: 0 70 * @hd;
+    }
+  }
+}
+
+//问诊人病历本
+.advisory-patients-records {
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  .advisory-add-patients-name {
+    padding: 0 15 * @hd;
+    background: extract(@whiteColor, 1);
+    min-height: 44 * @hd;
+    display: flex;
+    align-items: center;
+    min-width: 108 * @hd;
+    .am-list-item {
+      padding-left: 0;
+      input {
+        box-sizing: border-box;
+        border-radius: 4 * @hd;
+        text-align: left;
+        color: extract(@blackColor, 3);
+        width: 108 * @hd;
+        box-sizing: border-box;
+        padding: 0 5 * @hd;
+        font-size: 15 * @hd;
+        min-height: 26 * @hd;
+        border: 1 * @hd dashed extract(@whiteColor, 7);
+      }
+    }
+  }
+  .advisory-patients-card {
+    background: extract(@whiteColor, 1);
+    padding: 3 * @hd 12 * @hd 8 * @hd;
+    margin-top: 15 * @hd;
+    .am-tag {
+      margin-bottom: 20 * @hd;
+      border: 0.5 * @hd solid extract(@blackColor, 2);
+      color: extract(@blackColor, 3);
+      margin: 6 * @hd;
+      border-radius: 4 * @hd;
+    }
+    .am-tag-normal::before,
+    .am-tag-active:before {
+      display: none;
+    }
+    .am-tag-active {
+      background: extract(@blueColor, 5);
+      color: extract(@whiteColor, 1);
+      border-radius: 4 * @hd;
+      border: 0.5 * @hd solid extract(@blueColor, 5);
+    }
+  }
+  .advisory-sickTime-card {
+    background: extract(@whiteColor, 1);
+    padding: 3 * @hd 12 * @hd 8 * @hd;
+    margin-top: 15 * @hd;
+    .advisory-select-info {
+      padding: 5 * @hd 10 * @hd;
+      min-height: 25 * @hd;
+      display: inline-block;
+      box-sizing: border-box;
+      font-size: 14 * @hd;
+
+      color: extract(@blackColor, 3);
+      margin: 6 * @hd;
+      border-radius: 4 * @hd;
+      border: 0.5 * @hd solid extract(@whiteColor, 7);
+    }
+  }
+  //药品类
+  .advisory-sort-medical {
+    .advisory-sort-medical-title {
+      min-height: 30 * @hd;
+      line-height: 30 * @hd;
+      font-size: 13 * @hd;
+      color: extract(@blackColor, 2);
+      padding: 0 12 * @hd;
+      span {
+        margin-left: 10 * @hd;
+      }
+    }
+    .advisory-patients-card {
+      margin-top: 0;
+    }
+  }
+  .advisory-info-next-btn {
+    flex: 1;
+    margin-top: 20 * @hd;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 50 * @hd;
+    background: extract(@whiteColor, 1);
+    .am-button {
+      flex: 1;
+      margin: 0 15 * @hd;
+    }
+  }
+  //多行输入框
+  .am-textarea-item {
+    background: extract(@whiteColor, 1);
+
+    min-height: 160 * @hd;
+    padding: 0 15 * @hd 15 * @hd;
+    box-sizing: border-box;
+    .am-textarea-control {
+      border: 1 * @hd solid extract(@whiteColor, 7);
+      border-radius: 4 * @hd;
+      padding: 5 * @hd;
+      box-sizing: border-box;
+      background: extract(@whiteColor, 3);
+      textarea {
+        border: none;
+        font-size: 14 * @hd;
+      }
+    }
+  }
+}
+//支付订单页
+.advisory-pay-order {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  .am-notice-bar {
+    background: extract(@orangeColor, 4);
+    .am-notice-bar-marquee-wrap {
+      display: flex;
+      min-height: 40 * @hd;
+      justify-content: center;
+      color: extract(@orangeColor, 2);
+      font-size: 13 * @hd;
+      .advisory-pay-state-time {
+        margin-left: 10 * @hd;
+      }
+    }
+  }
+  .advisory-pay-person-info {
+    .am-list-body {
+      .am-list-item {
+        padding-left: 12 * @hd;
+        .am-list-line {
+          padding-right: 0;
+          margin-right: 12 * @hd;
+          .am-list-content {
+            font-size: 14 * @hd;
+            flex: 2;
+            color: extract(@blackColor, 2);
+          }
+          .am-list-extra {
+            flex: 8;
+            .advisory-pay-price-name {
+              display: flex;
+              padding-left: 20 * @hd;
+              font-size: 14 * @hd;
+              justify-content: space-between;
+              align-items: center;
+              .advisory-pay-name {
+                color: extract(@blackColor, 3);
+                span {
+                  margin-left: 12 * @hd;
+                }
+              }
+              .advisory-pay-price {
+                font-size: 12 * @hd;
+                color: extract(@redColor, 4);
+                span {
+                  font-size: 22 * @hd;
+                }
+              }
+            }
+          }
+        }
+        .am-list-line::after {
+          display: none;
+        }
+      }
+      .am-list-item:first-child {
+        .am-list-line::after {
+          display: block;
+        }
+      }
+    }
+    .am-list-body::before {
+      display: none;
+    }
+  }
+  .advisory-pay-weixin {
+    margin: 12 * @hd 0;
+    .am-list-thumb {
+      margin-right: 6 * @hd;
+    }
+    .am-list-content {
+      font-size: 14 * @hd;
+      color: extract(@blackColor, 3);
+    }
+    .am-list-extra {
+      .am-checkbox-wrapper {
+        .am-checkbox-inner {
+          border-radius: 4 * @hd;
+        }
+        .am-checkbox-checked {
+          .am-checkbox-inner {
+            border-color: extract(@blueColor, 5);
+            background: extract(@blueColor, 5);
+          }
+        }
+      }
+    }
+  }
+  .advisory-pay-agreement {
+    .am-list-body {
+      font-size: 13 * @hd;
+      color: extract(@blueColor, 5);
+      .am-checkbox-agree {
+        position: relative;
+        margin-right: 5 * @hd;
+        bottom: 2 * @hd;
+        .am-checkbox-checked {
+          .am-checkbox-inner {
+            border-color: extract(@blueColor, 5);
+            background: extract(@whiteColor, 1);
+          }
+          .am-checkbox-inner:after {
+            border-color: extract(@blueColor, 5);
+          }
+        }
+      }
+    }
+  }
+  .advisory-pay-btn {
+    margin-top: 12 * @hd;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: extract(@orangeColor, 3);
+    .am-list-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      .am-list-item {
+        min-height: 56 * @hd;
+        border-top: 1 * @hd solid extract(@whiteColor, 2);
+        .am-list-thumb {
+          margin-right: 5 * @hd;
+          img {
+            width: 13 * @hd;
+            height: 13 * @hd;
+          }
+        }
+        .am-list-line {
+          margin-right: 0;
+          .am-list-content {
+            font-size: 14 * @hd;
+            flex: 1;
+            a {
+              color: extract(@blackColor, 2);
+            }
+          }
+          .am-list-extra {
+            flex: 9;
+            padding: 0;
+            display: flex;
+            .advisory-pay-price-name {
+              padding-left: 35 * @hd;
+              flex: 1;
+              justify-content: space-between;
+              align-items: center;
+              .advisory-price-num {
+                text-align: center;
+                position: relative;
+                left: 35 * @hd;
+                padding: 0 20 * @hd;
+                .pay-price-num {
+                  font-size: 18 * @hd;
+                  color: extract(@redColor, 4);
+                }
+              }
+              .advisory-pay-btn {
+                border-radius: 0;
+                min-height: 56 * @hd;
+                line-height: 56 * @hd;
+                padding: 0;
+                margin: 0;
+                display: block;
+                max-width: 140 * @hd;
+                span {
+                  font-size: 17 * @hd;
+                }
+              }
+              .am-button-primary::before {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//支付订单模态框
+.advisory-pay-modal {
+  width: 82%;
+  .am-modal-header {
+    padding: 30 * @hd 15 * @hd 25 * @hd;
+    .advisory-pay-modal-wrapper {
+      .advisory-pay-modal-title {
+        font-size: 18 * @hd;
+        color: extract(@blackColor, 3);
+      }
+      .advisory-pay-modal-content {
+        padding-top: 20 * @hd;
+        line-height: 1.5;
+        font-size: 15 * @hd;
+        color: extract(@blackColor, 2);
+        span {
+          color: extract(@blueColor, 5);
+        }
+      }
+    }
+  }
+  .am-modal-footer {
+    .am-modal-button {
+      color: extract(@blackColor, 2);
+    }
+    .am-modal-button:nth-child(2) {
+      color: extract(@blueColor, 5);
+    }
+  }
+}
+//病情描述模态框
+.advisory-order-list-modal {
+  width: 85%;
+  .advisory-order-list-title {
+    margin-top: 14 * @hd;
+  }
+  .adivsory-order-list-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20 * @hd;
+
+    .advisory-doctor-name,
+    .advisory-datetime,
+    .advisory-patient-name,
+    .advisory-telephone-info,
+    .advisory-order-num {
+      font-size: 14 * @hd;
+      display: flex;
+      margin-bottom: 10 * @hd;
+      span:nth-child(1) {
+        justify-content: space-between;
+        color: extract(@blackColor, 2);
+        min-width: 60 * @hd;
+      }
+      span:nth-child(2) {
+        color: extract(@blackColor, 3);
+        padding-left: 5 * @hd;
+      }
+    }
+    .advisory-order-num {
+      span:nth-child(1) {
+        display: flex;
+        letter-spacing: 3 * @hd;
+        box-sizing: border-box;
+        justify-content: space-between;
+      }
+    }
+    .advisory-order-list-detail {
+      font-size: 14 * @hd;
+      color: extract(@blackColor, 3);
+      margin-top: 10 * @hd;
+      padding-bottom: 4 * @hd;
+    }
+  }
+}
+//看病记录
+.addvisory-medical-history {
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  .advisory-patients-options {
+    margin-bottom: 20 * @hd;
+    .am-list-body::before {
+      display: none;
+    }
+    .am-list-body {
+      .am-list-item {
+        min-height: 60 * @hd;
+        border-bottom: 0.5 * @hd solid extract(@whiteColor, 2);
+        padding-left: 0;
+        margin-left: 15 * @hd;
+        .am-list-line {
+          box-sizing: border-box;
+          min-height: 60 * @hd;
+          padding: 0 15 * @hd 0 0;
+          .am-list-line::after {
+            display: none;
+          }
+          .am-list-content {
+            .advisory-patients-options-card {
+              .advisory-patients-options-hospital {
+                font-size: 17 * @hd;
+                span {
+                  font-size: 14 * @hd;
+                  margin-left: 20 * @hd;
+                }
+              }
+              .advisory-patients-options-date {
+                font-size: 14 * @hd;
+                color: extract(@blackColor, 2);
+              }
+            }
+          }
+          .am-list-extra {
+            .am-checkbox-wrapper {
+              .am-checkbox {
+                background: extract(@whiteColor, 9);
+                border-radius: 4 * @hd;
+                .am-checkbox-inner {
+                  border-radius: 4 * @hd;
+                }
+                .am-checkbox-inner:before {
+                  position: absolute;
+                  top: 1.5 * @hd;
+                  border-color: extract(@whiteColor, 1);
+                  right: 6 * @hd;
+                  z-index: 999;
+                  width: 5 * @hd;
+                  height: 11 * @hd;
+                  border-style: solid;
+                  border-width: 0 1 * @hd 1 * @hd 0;
+                  content: ' ';
+                  -webkit-transform: rotate(45deg);
+                  -ms-transform: rotate(45deg);
+                  transform: rotate(45deg);
+                }
+              }
+              .am-checkbox-checked {
+                .am-checkbox-inner {
+                  border-color: extract(@blueColor, 5);
+                  background: extract(@blueColor, 5);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .addvisory-add-medical-history {
+    .addvisory-add-medical-history-title {
+      min-height: 44 * @hd;
+      line-height: 44 * @hd;
+      font-size: 15 * @hd;
+      border-bottom: 0.5 * @hd solid extract(@whiteColor, 2);
+      color: extract(@blackColor, 2);
+      padding-left: 15 * @hd;
+      background: extract(@whiteColor, 1);
+    }
+    .am-list-body {
+      .am-list-item {
+        min-height: 44 * @hd;
+        .am-list-line {
+          min-height: 44 * @hd;
+        }
+        .am-list-line:after {
+          display: none;
+        }
+      }
+    }
+  }
+  .advisory-history-next-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 50 * @hd;
+    min-height: 200 * @hd;
+    background: extract(@whiteColor, 1);
+    .am-button {
+      margin: 30 * @hd 15 * @hd 0;
+    }
+
+    .am-button:nth-child(2) {
+      background: extract(@whiteColor, 5);
+      color: extract(@blackColor, 3);
+    }
+    .am-button:nth-child(2)::before {
+      display: none;
+    }
+  }
+}
+
+//填写医院名称 填写科室
+.advisory-fill-info {
+  height: 100%;
+  overflow-y: auto;
+  background: extract(@whiteColor, 1);
+  display: flex;
+  flex-direction: column;
+  .search_box {
+    border-bottom: none;
+    .am-search {
+      padding: 0;
+      margin: 0 8 * @hd;
+      .am-search-input {
+        border: none;
+        background: extract(@whiteColor, 3) !important;
+        input {
+          background: extract(@whiteColor, 3) !important;
+          padding-left: 3 * @hd;
+        }
+      }
+      .am-search-cancel {
+        background: extract(@whiteColor, 1);
+      }
+    }
+  }
+
+  .advdsisory-fill-list {
+    .am-list {
+      .am-list-body:before,
+      .am-list-body:after {
+        display: none;
+      }
+      .am-list-line {
+        border-bottom: 1 * @hd solid extract(@whiteColor, 2);
+      }
+    }
+    .addvisory-fill-history {
+      min-height: 22 * @hd;
+      line-height: 22 * @hd;
+      padding-left: 15 * @hd;
+      font-size: 13 * @hd;
+      background: extract(@whiteColor, 5);
+      color: extract(@blackColor, 2);
+    }
+  }
+  //化验单 医嘱与用药
+  .advisory-upload-checktest {
+    .advisory-upload-checktest-title {
+      min-height: 44 * @hd;
+      line-height: 44 * @hd;
+      margin-left: 15 * @hd;
+      border-bottom: 1 * @hd solid extract(@whiteColor, 2);
+      font-size: 15 * @hd;
+      color: extract(@blackColor, 2);
+    }
+    .am-image-picker {
+      .am-image-picker-list {
+        padding-left: 15 * @hd;
+
+        .am-flexbox {
+          .am-flexbox-item {
+            margin-right: 12 * @hd;
+            .am-image-picker-item-remove {
+              width: 20 * @hd;
+              height: 20 * @hd;
+              background-size: cover;
+              right: 0;
+              top: 0;
+              background-image: url('../../assets/images/image_delete.png');
+            }
+            .am-image-picker-upload-btn {
+              border-style: dashed;
+            }
+          }
+        }
+      }
+    }
+    .am-list-item {
+      background: extract(@whiteColor, 3);
+      border: 1 * @hd solid extract(@whiteColor, 7);
+      border-radius: 4 * @hd;
+      margin: 10 * @hd 15 * @hd 0;
+      min-height: 160 * @hd;
+      padding: 0 7 * @hd;
+      box-sizing: border-box;
+      .am-textarea-control {
+        padding: 0;
+        textarea {
+          border: none;
+          font-size: 14 * @hd;
+        }
+      }
+    }
+  }
+  .advisory-info-next-btn {
+    flex: 1;
+    margin-top: 20 * @hd;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 50 * @hd;
+    background: extract(@whiteColor, 1);
+    .am-button {
+      flex: 1;
+      margin: 0 15 * @hd;
+    }
+  }
+}
+//个人病例页
+.medical-records-info {
+  display: flex;
+  flex-direction: column;
+
+  .adivisory-patient-info {
+    .am-list-body::before,
+    .am-list-body::after {
+      display: none;
+    }
+    .am-list-item {
+      min-height: 85 * @hd;
+      padding-left: 12 * @hd;
+      .am-list-line {
+        padding-right: 12 * @hd;
+      }
+      .am-list-thumb {
+        img {
+          width: 64 * @hd;
+          height: 64 * @hd;
+        }
+      }
+    }
+  }
+  .medical-records-title {
+    padding: 0 12 * @hd;
+    min-height: 22 * @hd;
+    font-size: 13 * @hd;
+    color: extract(@blackColor, 2);
+    line-height: 22 * @hd;
+  }
+  .medical-records-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: extract(@whiteColor, 1);
+    padding: 0 12 * @hd;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 68 * @hd;
+      height: 68 * @hd;
+    }
+    .doctor-medical-btn-text {
+      margin-top: 14 * @hd;
+      color: extract(@blueColor, 6);
+      font-size: 15 * @hd;
+    }
+  }
+  .medical-records-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: extract(@whiteColor, 1);
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+    .medical-add-history {
+      position: fixed;
+      background: extract(@whiteColor, 1);
+      border: 1 * @hd solid extract(@blueColor, 6);
+      width: 68 * @hd;
+      height: 68 * @hd;
+      right: 20 * @hd;
+      bottom: 50 * @hd;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .medical-add-row {
+        width: 38 * @hd;
+        height: 1 * @hd;
+        background: extract(@blueColor, 6);
+      }
+      .medical-add-column {
+        position: absolute;
+        width: 1 * @hd;
+        height: 38 * @hd;
+        background: extract(@blueColor, 6);
+      }
+    }
+    .medical-records-item {
+      display: flex;
+      padding: 20 * @hd 0 0;
+
+      .medical-records-item-num {
+        margin-left: 10 * @hd;
+        margin-right: 13 * @hd;
+        width: 15 * @hd;
+        height: 15 * @hd;
+        text-align: center;
+        line-height: 15 * @hd;
+        border: 1 * @hd solid extract(@blueColor, 6);
+        color: extract(@blueColor, 6);
+        font-size: 12 * @hd;
+        border-radius: 50%;
+      }
+      .medical-records-item-wrapper {
+        flex: 1;
+        border-bottom: 1 * @hd solid extract(@whiteColor, 2);
+        padding-bottom: 8.5 * @hd;
+        .medical-records-title-content {
+          display: flex;
+          flex-direction: column;
+          .am-list-body::before,
+          .am-list-body::after {
+            display: none;
+          }
+          .medical-records-title-time {
+            padding-left: 0;
+            .am-list-line {
+              padding-right: 12 * @hd;
+              .am-list-content {
+                padding-top: 0;
+                line-height: 1;
+                font-size: 16 * @hd;
+                color: extract(@blackColor, 3);
+                .am-list-brief {
+                  font-size: 14 * @hd;
+                  color: extract(@blackColor, 2);
+                  margin-top: 6 * @hd;
+                  span {
+                    margin-left: 38 * @hd;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .meidical-records-item-content {
+          padding-right: 12 * @hd;
+          .medical-records-photo {
+            .medical-records-photo-tags {
+              border-radius: 20 * @hd;
+              border: 1 * @hd solid extract(@blueColor, 6);
+              color: extract(@blueColor, 6);
+              margin-left: 10 * @hd;
+            }
+            .medical-records-photo-tags:first-child {
+              margin-left: 0;
+            }
+            .am-tag-normal::before,
+            .am-tag-active::before {
+              display: none;
+            }
+          }
+          .medical-records-imginfo {
+            padding: 3.5 * @hd 0 0;
+            display: flex;
+            overflow-x: auto;
+            justify-content: flex-start;
+            .medical-records-img-item {
+              width: 25%;
+              min-height: 25%;
+              padding: 6.5 * @hd;
+              box-sizing: border-box;
+              text-align: center;
+              img {
+                width: 100%;
+                height: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//填写医院链接
+.medical-record-link-info {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  .medical-record-fill-info {
+    .am-list-body::before,
+    .am-list-body::after {
+      display: none;
+    }
+    .am-list-line {
+      .am-input-label {
+        flex: 2.5;
+        font-size: 15 * @hd;
+        color: extract(@blackColor, 2);
+      }
+      .am-input-control {
+        flex: 7.5;
+        font-size: 17 * @hd;
+        color: extract(@blackColor, 3);
+      }
+    }
+  }
+  .meidical-record-submit-btn {
+    flex: 1;
+    padding: 0 12 * @hd;
+    display: flex;
+    align-items: flex-end;
+    .am-button {
+      margin-bottom: 50 * @hd;
+      flex: 1;
+    }
+  }
+}
+//创建看病记录
+.medical-records-create {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  .medical-records-head {
+    .am-list-body::before,
+    .am-list-body::after {
+      display: none;
+    }
+    .am-list-item {
+      padding-left: 0;
+      margin-left: 12 * @hd;
+      border-bottom: 1 * @hd solid extract(@whiteColor, 2);
+      .am-list-line {
+        padding-right: 12 * @hd;
+        .am-list-content {
+          font-size: 17 * @hd;
+          color: extract(@blackColor, 3);
+          span {
+            font-size: 14 * @hd;
+            color: extract(@blackColor, 2);
+            margin-left: 10 * @hd;
+          }
+        }
+      }
+    }
+    .meidical-records-department {
+      border-bottom: none;
+    }
+  }
+  .medical-records-title {
+    min-height: 45 * @hd;
+    font-size: 16 * @hd;
+    color: extract(@blackColor, 2);
+    line-height: 45 * @hd;
+    padding: 0 12 * @hd;
+  }
+
+  .medical-records-item,
+  .medical-records-upload-photo {
+    .am-list-body::before,
+    .am-list-body::after {
+      display: none;
+    }
+    .am-list-item {
+      min-height: 74 * @hd;
+      padding-left: 0;
+      margin-left: 12 * @hd;
+      border-bottom: 1 * @hd solid extract(@whiteColor, 2);
+      .am-list-line {
+        padding-right: 12 * @hd;
+      }
+      .am-list-line:after {
+        display: none !important;
+      }
+      .am-list-thumb {
+        img {
+          width: 42 * @hd;
+          height: 42 * @hd;
+        }
+      }
+    }
+    .am-list-item:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .medical-records-footer {
+    .am-list-body::before,
+    .am-list-body::after {
+      display: none;
+    }
+    .am-list-item {
+      padding-left: 0;
+      margin-left: 12 * @hd;
+      .am-list-thumb {
+        padding: 15 * @hd 0;
+        img {
+          min-height: 42 * @hd;
+          min-width: 42 * @hd;
+        }
+      }
+      .am-list-line {
+        padding-right: 12 * @hd;
+      }
+    }
+    .medical-records-section {
+      border-bottom: 1 * @hd solid extract(@whiteColor, 2);
+      .am-list-line {
+        .am-list-content {
+          color: extract(@whiteColor, 7);
+          font-size: 13 * @hd;
+        }
+      }
+    }
+    .medical-records-section:last-child {
+      border-bottom: none;
+    }
+  }
+  .medical-records-save-btn {
+    padding: 30 * @hd 12 * @hd 15 * @hd;
+  }
+}
+
+//填写看病指标
+.medical-record-target-info {
+  .search_box {
+    .am-search-input {
+      border-radius: 100 * @hd !important;
+    }
+  }
+  .medical-record-target-history {
+    padding: 0 15 * @hd 25 * @hd;
+
+    .am-tag {
+      min-width: 30%;
+      margin-right: 9 * @hd;
+      margin-top: 10 * @hd;
+      min-height: 27 * @hd;
+      box-sizing: border-box;
+      font-size: 14 * @hd;
+      border: 1 * @hd solid extract(@blueColor, 6);
+      border-radius: 50 * @hd;
+      color: extract(@blueColor, 6);
+    }
+    .am-tag-active::before,
+    .am-tag-normal::before {
+      display: none;
+    }
+    .am-tag:first-child {
+      margin-left: 0;
+    }
+  }
+  .medical-record-target-list {
+    .am-accordion-item {
+      .am-accordion-header {
+        font-size: 17 * @hd;
+        color: extract(@blackColor, 3);
+        i {
+          transform: rotate(0deg);
+        }
+      }
+      .am-accordion-content {
+        .am-list-item {
+          background: extract(@whiteColor, 3);
+          .am-list-content {
+            font-size: 14 * @hd;
+            color: extract(@blackColor, 3);
+          }
+        }
+      }
+    }
+    .am-accordion-item-active {
+      .am-accordion-header {
+        i {
+          transform: rotate(90deg) !important;
+        }
+      }
+    }
+  }
+  .medical-record-target-desc {
+    display: flex;
+    padding: 16 * @hd 15 * @hd 0;
+    justify-content: flex-end;
+    span {
+      text-decoration: underline;
+      font-size: 17 * @hd;
+      color: extract(@blueColor, 6);
+    }
+  }
+}
+/***********************医生留言********************/
+.doctor-letter-list {
+  height: 100%;
+  overflow-y: auto;
+  padding-left: 0 !important;
+  .patient-chat-history(@height:67 * @hd);
+  .doctor-message-history {
+    background: extract(@whiteColor, 1);
+    .am-card-header {
+      margin: 0;
+      padding: 10 * @hd 0;
+      box-sizing: border-box;
+      .am-card-header-content {
+        display: flex;
+        margin: 0 12 * @hd;
+        .dk-avatar {
+          align-self: flex-start;
+        }
+        .patient-history-cart {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+
+          .patient-history-content {
+            flex: 1;
+
+            .patient-hsitory-text {
+              .ellipsis-mult(@n: 3);
+            }
+          }
+        }
+      }
+    }
+    .am-card-full::before {
+      display: none !important;
+    }
+  }
+}
+
+/***********************咨询订单********************/
+.doctor-order-list {
+  height: 100%;
+  background: extract(@whiteColor, 1);
+  overflow-y: auto;
+  .doctor-list-item {
+    margin-top: 0;
+    width: 100%;
+    .am-card {
+      .am-card-header {
+        min-height: 70 * @hd;
+        padding: 0 15 * @hd;
+        .am-card-header-content {
+          min-height: 70 * @hd;
+          align-items: flex-start;
+          img {
+            margin-top: 20 * @hd;
+          }
+          .doctor-order-cart {
+            flex-direction: row;
+            flex: 1;
+            border-bottom: none;
+            padding: 28 * @hd 0 0 15 * @hd;
+            font-size: 13 * @hd;
+            color: extract(@blackColor, 2);
+            .doctor-card-box {
+              display: flex;
+              justify-content: space-between;
+
+              .doctor-name {
+                font-size: 16 * @hd;
+                color: extract(@blackColor, 3);
+              }
+              .doctor-job-box {
+                margin-left: 8 * @hd;
+
+                .doctor-price {
+                  margin-left: 12 * @hd;
+                  font-size: 10 * @hd;
+
+                  .doctor-price-number {
+                    font-size: 13 * @hd;
+                  }
+                }
+              }
+            }
+            .doctor-card-box:nth-child(2) {
+              margin-top: 10 * @hd;
+            }
+          }
+          .doctor-treat-box {
+            margin-top: 10 * @hd;
+            display: flex;
+            .doctor-treat-patient {
+              padding-left: 5 * @hd;
+            }
+          }
+        }
+      }
+      .am-card-body {
+        min-height: 40 * @hd;
+        line-height: 2.5;
+        .doctor-list-bottom {
+          min-height: 40 * @hd;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: space-between;
+          padding: 0 15 * @hd;
+          font-size: 13 * @hd;
+          color: extract(@blackColor, 2);
+          .doctor-chat-time {
+            color: extract(@blackColor, 3);
+          }
+        }
+      }
+    }
+    .am-card-full::before {
+      display: none !important;
+    }
+  }
+}
+
+//订单详情
+.doctor-order-detail {
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  .am-notice-bar {
+    min-height: 40 * @hd;
+    background: extract(@whiteColor, 1);
+    color: extract(@orangeColor, 2);
+    .am-notice-bar-content {
+      min-height: 40 * @hd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .doctor-order-notice {
+    min-height: 40 * @hd;
+    background: extract(@whiteColor, 1);
+    font-size: 17 * @hd;
+    text-align: center;
+    line-height: 40 * @hd;
+    color: extract(@blackColor, 2);
+    position: relative;
+    .doctor-order-chat-history {
+      position: absolute;
+      right: 15 * @hd;
+      min-height: 40 * @hd;
+      top: 0;
+      color: extract(@blueColor, 6);
+      line-height: 40 * @hd;
+    }
+  }
+  .doctor-order-refund-title {
+    min-height: 40 * @hd;
+    background: extract(@whiteColor, 1);
+    font-size: 17 * @hd;
+    text-align: center;
+    line-height: 40 * @hd;
+    color: extract(@blackColor, 3);
+  }
+  .doctor-order-refund-content {
+    margin-top: 15 * @hd;
+    .am-list-body {
+      .am-list-content {
+        font-size: 15 * @hd;
+        color: extract(@blackColor, 2);
+      }
+      .doctor-refund-item-money {
+        min-height: 60 * @hd;
+        border-bottom: 1 * @hd solid extract(@whiteColor, 2);
+        .am-list-line:after {
+          display: none;
+        }
+
+        .am-list-extra {
+          font-size: 22 * @hd;
+          color: extract(@blackColor, 3);
+        }
+      }
+      .doctor-refund-item-bank {
+        .am-list-brief {
+          font-size: 14 * @hd;
+          .doctor-order-item-right {
+            color: extract(@blackColor, 3);
+          }
+        }
+      }
+      .am-list-brief {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .am-list-body::before,
+    .am-list-body::after {
+      display: none;
+    }
+  }
+  .doctor-order-list {
+    margin-top: 15 * @hd;
+    max-height: 88 * @hd;
+    .am-list-item {
+      min-height: 44 * @hd;
+      .am-list-line {
+        padding-right: 12 * @hd;
+        min-height: 44 * @hd;
+        .am-list-content {
+          flex: 3;
+          font-size: 15 * @hd;
+          color: extract(@blackColor, 2);
+        }
+        .am-list-extra {
+          flex: 7;
+          .doctor-order-item-right {
+            font-size: 17 * @hd;
+            color: extract(@blackColor, 3);
+            .doctor-order-name {
+              margin-right: 14 * @hd;
+            }
+            .doctor-order-item-phone {
+              padding-right: 25 * @hd;
+            }
+          }
+        }
+      }
+    }
+
+    .doctor-order-item-time {
+      .am-list-content {
+        flex: 2.5;
+      }
+      .am-list-extra {
+        flex: 7.5;
+      }
+    }
+  }
+  .doctor-order-list-frist {
+    min-height: 132 * @hd;
+  }
+  .doctor-order-footer {
+    margin-top: 15 * @hd;
+    display: flex;
+    flex: 1;
+    padding-bottom: 20 * @hd;
+    box-sizing: border-box;
+    background: extract(@whiteColor, 1);
+    position: relative;
+    align-items: flex-end;
+    .doctor-order-service {
+      position: absolute;
+      top: 20 * @hd;
+      right: 20 * @hd;
+      width: 54 * @hd;
+      height: 54 * @hd;
+      background: extract(@blueColor, 5);
+      font-size: 17 * @hd;
+      color: extract(@whiteColor, 1);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 54 * @hd;
+    }
+    .am-button {
+      flex: 1;
+      margin: 0 15 * @hd;
+      height: 44 * @hd;
+      background: extract(@orangeColor, 3);
+    }
+    .am-button-primary::before {
+      border-color: extract(@orangeColor, 3);
+    }
+    .doctor-order-btn-box {
+      display: flex;
+      flex: 1;
+      .am-button {
+        height: 44 * @hd;
+      }
+      .am-button:first-child {
+        background: extract(@whiteColor, 1);
+        color: extract(@whiteColor, 7);
+      }
+      .am-button-primary:first-child::before {
+        border-color: extract(@whiteColor, 7);
+      }
+      .am-button:nth-child(2) {
+        margin-left: 20 * @hd;
+        background: extract(@blueColor, 5);
+      }
+    }
+  }
+}
+//提交的主诉
+.doctor-member-list {
+  .doctor-member-title {
+    min-width: 30 * @hd;
+    padding: 0 12 * @hd;
+    line-height: 30 * @hd;
+    font-size: 13 * @hd;
+    color: extract(@blackColor, 2);
+  }
+  .doctor-member-info {
+    .am-list-item {
+      border-bottom: 1 * @hd solid extract(@whiteColor, 2);
+      padding-left: 0;
+      margin-left: 15 * @hd;
+
+      .am-list-content {
+        flex: 3;
+        font-size: 15 * @hd;
+        color: extract(@blackColor, 2);
+      }
+      .am-list-extra {
+        flex: 7;
+      }
+    }
+    .am-list-line:after {
+      display: none !important;
+    }
+
+    .doctor-name-box {
+      font-size: 17 * @hd;
+      color: extract(@blackColor, 3);
+    }
+  }
+  .doctor-medical-record-container {
+    padding: 20 * @hd 0 15 * @hd;
+    background: extract(@whiteColor, 1);
+    border-bottom: 1 * @hd solid extract(@whiteColor, 2);
+    .doctor-meidcal-record-head {
+      display: flex;
+      justify-content: space-between;
+      font-size: 17 * @hd;
+      color: extract(@blackColor, 3);
+      padding: 0 15 * @hd 0 5 * @hd;
+      .doctor-medical-record-time {
+        display: flex;
+        align-items: center;
+        .doctor-medical-border {
+          margin-right: 5 * @hd;
+          width: 3 * @hd;
+          height: 15 * @hd;
+          background-image: linear-gradient(to bottom, #78b8fe, #597aee);
+        }
+      }
+      img {
+        width: 15 * @hd;
+        height: 15 * @hd;
+      }
+    }
+
+    .doctor-medical-section-hostpital,
+    .doctor-medical-record-history,
+    .doctor-medical-use,
+    .doctor-medical-need-help {
+      padding: 0 12 * @hd;
+      font-size: 15 * @hd;
+      color: extract(@blackColor, 2);
+    }
+    .doctor-medical-use {
+      border-bottom: 1 * @hd solid extract(@whiteColor, 2);
+    }
+    .doctor-medical-section-hostpital {
+      margin-top: 6 * @hd;
+      span {
+        margin-left: 38 * @hd;
+      }
+    }
+    .doctor-medical-section-title {
+      margin-top: 15 * @hd;
+    }
+    .doctor-medical-record-image {
+      padding: 3.5 * @hd 0 8.5 * @hd;
+      display: flex;
+      overflow-x: auto;
+      justify-content: flex-start;
+      img {
+        width: 25%;
+        height: 25%;
+        padding: 6.5 * @hd;
+        box-sizing: border-box;
+      }
+    }
+    .doctor-advice-use {
+      padding: 2 * @hd 0;
+      display: flex;
+      flex-direction: column;
+      font-size: 15 * @hd;
+      color: extract(@blackColor, 3);
+      .doctor-advice-use-item {
+        padding-top: 8 * @hd;
+      }
+    }
+    .doctor-medical-need-help {
+      .doctor-medical-section-title {
+        display: flex;
+        justify-content: space-between;
+        .doctor-meidical-advisory-help {
+          font-size: 17 * @hd;
+          color: extract(@blackColor, 3);
+        }
+      }
+    }
+  }
+
+  .doctor-medical-add-history {
+    min-height: 160 * @hd;
+    margin-top: 10 * @hd;
+    background: extract(@whiteColor, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    img {
+      width: 68 * @hd;
+      height: 68 * @hd;
+    }
+    .doctor-medical-btn-text {
+      margin-top: 14 * @hd;
+      color: extract(@blueColor, 6);
+      font-size: 15 * @hd;
+    }
+  }
+}
+/***********************我的医生********************/
+.my-doctor-info {
+  display: flex;
+  flex-direction: column;
+  .doctor-list {
+    flex: 1;
+    .am-list-header {
+      padding: 0;
+    }
+    .am-list-view-scrollview-content {
+      height: 100%;
+      .am-pull-to-refresh-content-wrapper {
+        height: 100%;
+      }
+    }
+    .am-list-body::before,
+    .am-list-body::after {
+      display: none;
+    }
+    .am-card {
+      min-height: 60 * @hd;
+      padding-bottom: 0;
+      .am-card-header {
+        min-height: 60 * @hd;
+        .am-card-header-content {
+          min-height: 60 * @hd;
+        }
+      }
+    }
+    .am-card::after {
+      display: none;
+    }
+    .am-list-body {
+      .card-item:last-child {
+        .doctor-history-cart {
+          border-bottom: none !important;
+        }
+      }
+    }
+  }
+}
+
+//医生个人详情页
+.doctor-detail {
+  .doctor-ower-item {
+    .am-card {
+      min-height: 80 * @hd;
+      .am-card-header-content {
+        min-height: 80 * @hd;
+        .dk-avatar {
+          width: 50 * @hd;
+          height: 50 * @hd;
+          padding: 0;
+          margin: 0;
+          align-self: flex-start;
+        }
+      }
+      .am-card-header {
+        min-height: 80 * @hd;
+        .doctor-history-cart {
+          margin-top: 15 * @hd !important;
+          border-bottom: none !important;
+          .doctor-card-box {
+            display: flex !important;
+            .doctor-job-box {
+              flex: 1;
+              img {
+                position: relative;
+                left: 10 * @hd;
+                bottom: 7 * @hd;
+                width: 15 * @hd !important;
+                height: auto !important;
+              }
+            }
+            .doctor-name {
+              font-size: 19 * @hd !important;
+            }
+            .doctor-job-right {
+              padding-left: 10 * @hd;
+            }
+          }
+          .doctor-card-box:last-child {
+            line-height: 1;
+            padding-left: 0;
+            .doctor-job-box {
+              padding-left: 3 * @hd;
+            }
+          }
+        }
+      }
+    }
+  }
+  .doctor-info-list {
+    margin-top: 10 * @hd;
+    width: 100%;
+    .am-list-body::before,
+    .am-list-body::after {
+      display: none;
+    }
+    .am-list {
+      min-height: 49 * @hd;
+      .am-list-body {
+        min-height: 49 * @hd;
+        margin-left: 0;
+        padding-left: 12 * @hd;
+        .am-list-item {
+          min-height: 49 * @hd;
+        }
+        .am-list-content {
+          flex: 3;
+
+          font-size: 16 * @hd;
+        }
+        .am-list-extra {
+          flex: 7;
+        }
+      }
+    }
+    .doctor-hospital-name {
+      .am-list-line {
+        display: flex;
+        border-bottom: none;
+        .am-list-content {
+          max-width: 98.41 * @hd;
+          flex: 3;
+        }
+        .am-list-extra {
+          flex: 7;
+          text-align: left;
+        }
+      }
+    }
+    .doctor-info-list-center {
+      margin-top: 10 * @hd;
+      background: extract(@whiteColor, 1);
+      .doctor-bottom-10 {
+        .am-list-content {
+          align-self: flex-start;
+          padding-top: 16 * @hd;
+        }
+        .am-list-extra {
+          max-height: 62 * @hd;
+          line-height: 1.6;
+          padding: 15 * @hd 0;
+        }
+      }
+      .am-list {
+        .am-list-body::before,
+        .am-list-body::after {
+          display: none;
+        }
+        .am-list-body {
+          padding-left: 0;
+          padding-right: 0;
+          margin-left: 12 * @hd;
+          .am-list-item {
+            padding-right: 12 * @hd;
+            border-bottom: 1 * @hd solid extract(@whiteColor, 2);
+            .am-list-extra {
+              padding: 10 * @hd 0;
+              text-align: left;
+              .doctor-notes-box {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                overflow-x: auto;
+                img {
+                  min-width: 50 * @hd;
+                  min-height: 50 * @hd;
+                  margin: 5 * @hd;
+                }
+              }
+              .doctor-notes-box :first-child {
+                margin-left: 0;
+              }
+            }
+            .am-list-line::after {
+              display: none;
+            }
+          }
+          .am-list-item:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+      .doctor-good-content {
+        display: flex;
+        align-items: center;
+        padding: 12 * @hd 12 * @hd 12 * @hd 0;
+        box-sizing: border-box;
+        border-bottom: 0.5 * @hd solid extract(@whiteColor, 2);
+        .patient-group-title {
+          flex: 3;
+          max-width: 98.41 * @hd;
+          line-height: 2;
+        }
+        .patient-group-content {
+          flex: 7;
+        }
+      }
+    }
+    .doctor-info-list-bottom {
+      margin-top: 10 * @hd;
+      .am-list-body::before,
+      .am-list-body::after {
+        height: 0;
+      }
+
+      .patient-person-list {
+        background: extract(@whiteColor, 1);
+        .am-list-body {
+          padding-right: 0;
+          .am-list-item {
+            padding-right: 12 * @hd;
+            border-bottom: 1 * @hd solid extract(@whiteColor, 2);
+          }
+          .am-list-line::after {
+            display: none;
+          }
+          .am-list-item:last-child {
+            border-bottom: none !important;
+          }
+        }
+      }
+    }
+    .doctor-icon-right {
+      display: flex;
+      align-items: center;
+      position: relative;
+      left: 5 * @hd;
+      svg {
+        width: 30 * @hd;
+        height: 30 * @hd;
+      }
+    }
+  }
+  .am-button-primary::before {
+    border: none;
+  }
+  .doctor-order-btn {
+    margin-bottom: 0;
+  }
+  .bgColor_disabled {
+    color: extract(@whiteColor, 1);
+    background: extract(@whiteColor, 6);
+  }
+  .doctor-message-btn {
+    margin-top: 15 * @hd;
+  }
+}
+//医生个人详情页=>医生简介
+.doctor-introduction {
+  height: 100%;
+  overflow-y: auto;
+  .am-card {
+    margin: 0 !important;
+    padding-right: 0 !important;
+    .am-card-header {
+      margin-left: 12 * @hd;
+      padding-left: 12 * @hd;
+      border-bottom: 1 * @hd solid extract(@whiteColor, 2);
+      .doctor-evaluation-name {
+        font-size: 15 * @hd !important;
+        color: extract(@blackColor, 3);
+      }
+      .doctor-evaluation-date {
+        font-size: 13 * @hd !important;
+      }
+    }
+    .am-card-body {
+      margin: 30 * @hd 15 * @hd;
+      color: extract(@blackColor, 1) !important;
+    }
+  }
+}
+//医生个人详情页=>医生擅长
+.doctor-good-at-info {
+  display: flex;
+  background: extract(@whiteColor, 1);
+  height: 100%;
+  touch-action: none;
+  line-height: 1.5;
+  padding: 30 * @hd 15 * @hd;
+  font-size: 15 * @hd;
+  letter-spacing: 2 * @hd;
+  color: extract(@blackColor, 3);
+}
+//医生个人详情页=>医生投诉
+.doctor-complaint-content {
+  .am-list {
+    .am-list-header {
+      padding: 0 12.5 * @hd;
+      min-height: 39 * @hd;
+      font-size: 15 * @hd;
+      color: extract(@blackColor, 2);
+      line-height: 39 * @hd;
+    }
+    .am-list-body {
+      .am-textarea-count {
+        color: extract(@blackColor, 2);
+        span {
+          color: extract(@blackColor, 2);
+        }
+      }
+    }
+  }
+  .doctor-complaints-procedure {
+    font-size: 12 * @hd;
+    color: extract(@blueColor, 1);
+    position: absolute;
+    bottom: 24.5 * @hd;
+    left: 50%;
+    transform: translateX(-50%);
+    touch-action: none;
+  }
+}
+//医生个人详情页=>患者评价
+.doctor-patient-evaluation {
+  background: extract(@whiteColor, 1);
+  .am-card {
+    margin-left: 12 * @hd;
+    padding-right: 12 * @hd;
+    padding-bottom: 15 * @hd;
+    .am-card-header {
+      min-height: 36 * @hd;
+      padding: 15.5 * @hd 0 18.5 * @hd;
+      img {
+        height: 36 * @hd;
+        width: 36 * @hd;
+        border-radius: 5 * @hd;
+      }
+      .doctor-evaluation-cart {
+        min-height: 36 * @hd;
+        padding-left: 15 * @hd;
+        display: flex;
+        flex-direction: column;
+        border-bottom: none;
+        .doctor-evaluation-box {
+          justify-content: flex-start;
+          color: extract(@blackColor, 2);
+          .doctor-evaluation-name {
+            font-weight: normal;
+            font-size: 15 * @hd;
+          }
+          .doctor-evaluation-date {
+            padding-left: 0;
+            font-size: 14 * @hd;
+          }
+        }
+        .doctor-evaluation-box:last-child {
+          padding-top: 8 * @hd;
+        }
+      }
+    }
+    .am-card-body {
+      padding: 0;
+      min-height: auto;
+      font-size: 16 * @hd;
+      color: extract(@blackColor, 3);
+      line-height: 1.5;
+    }
+    .am-card-body::before {
+      height: 0;
+    }
+  }
+  .am-card-full::before {
+    display: none !important;
+  }
+  .am-card-full:last-child::after {
+    display: none !important;
+  }
+}
+//医生个人详情页=>开放病历本设置
+.doctor-medical-record-list {
+  margin-top: 10 * @hd;
+  height: 100%;
+  overflow-y: auto;
+  .am-list {
+    min-height: 88 * @hd;
+    .am-list-body {
+      min-height: 88 * @hd;
+      line-height: 88 * @hd;
+      .am-list-item {
+        padding-left: 0;
+        margin-left: 15 * @hd;
+        border-bottom: 1 * @hd solid extract(@whiteColor, 4);
+      }
+      img {
+        height: 65 * @hd;
+        width: 65 * @hd;
+        border-radius: 5 * @hd;
+      }
+    }
+  }
+  .am-list-body::before,
+  .am-list-body::after {
+    display: none !important;
+  }
+  //增加病历本按钮
+  .doctor-add-medical-record {
+    width: 75 * @hd;
+    height: 75 * @hd;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 40 * @hd;
+    right: 30 * @hd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4 * @hd solid extract(@whiteColor, 1);
+    background: extract(@redColor, 2);
+    .doctor-add-sumrow {
+      width: 30 * @hd;
+      height: 2 * @hd;
+      background: extract(@whiteColor, 1);
+    }
+    .doctor-add-sumcolumn {
+      position: relative;
+      right: 15 * @hd;
+      width: 2 * @hd;
+      height: 30 * @hd;
+      background: extract(@whiteColor, 1);
+    }
+  }
+}
+
+//医生个人详情页=>医生头条
+.doctor-head-content {
+  height: 100%;
+  background: extract(@whiteColor, 1);
+  overflow-y: auto;
+  padding-bottom: 30 * @hd;
+  box-sizing: border-box;
+  .doctor-head-logo {
+    height: 211 * @hd;
+    width: 100%;
+    background: blue;
+    background: url('../../assets/images/doctorHeaderPerson.jpg') no-repeat
+      center;
+    background-size: cover;
+    position: relative;
+    .doctor-head-person {
+      box-sizing: border-box;
+      height: 74 * @hd;
+      width: 74 * @hd;
+      background: url('../../assets/images/doctorHeaderPerson.jpg') no-repeat
+        center;
+      background-size: contain;
+      position: absolute;
+      right: 12 * @hd;
+      bottom: -25 * @hd;
+      border: 2 * @hd solid extract(@whiteColor, 1);
+    }
+    .doctor-head-nickname {
+      position: absolute;
+      bottom: 12 * @hd;
+      right: 111 * @hd;
+      font-size: 17 * @hd;
+      font-weight: bold;
+      color: extract(@whiteColor, 1);
+      text-shadow: extract(@whiteColor, 2) 0.1em 0.1em 0.2em;
+    }
+  }
+  //轮播图
+  .swiper-container {
+    display: flex;
+    max-height: 211 * @hd;
+    .slider {
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+      .slider-decorator-0 {
+        flex: 1;
+        right: 0;
+        z-index: 1;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 8 * @hd 20 * @hd 8 * @hd 0;
+        line-height: 1.5;
+        flex: 1;
+        .am-carousel-wrap {
+          text-align: right;
+        }
+      }
+    }
+  }
+  .doctor-head-lines-list {
+    margin: 75 * @hd 0 50 * @hd;
+    .doctor-head-lines-small {
+      display: flex;
+      min-height: 50 * @hd;
+      margin-top: 29.5 * @hd;
+      .doctor-head-lines-time {
+        flex: 2.13;
+        text-align: center;
+        font-size: 29 * @hd;
+        font-weight: bold;
+        color: extract(@blackColor, 11);
+        span {
+          font-size: 12 * @hd;
+        }
+      }
+      .doctor-head-comment-content {
+        flex: 7.87;
+        .doctor-head-lines-box {
+          min-height: 50 * @hd;
+          display: flex;
+          align-items: center;
+          box-sizing: border-box;
+          margin-right: 12 * @hd;
+          padding: 5 * @hd;
+          background: extract(@whiteColor, 3);
+          .doctor-head-content-img {
+            width: 40 * @hd;
+            height: 40 * @hd;
+            background: url('../../assets/images/doctorHeaderPerson.jpg')
+              no-repeat center;
+            background-size: contain;
+          }
+          .doctor-head-lines-content {
+            flex: 1;
+            padding-left: 6 * @hd;
+            min-height: 40 * @hd;
+            line-height: 1.3;
+            font-size: 15 * @hd;
+            color: extract(@blackColor, 3);
+          }
+        }
+        //点赞评论
+        .doctor-head-time-good {
+          display: flex;
+          margin-right: 12 * @hd;
+          min-height: 39 * @hd;
+          align-items: flex-start;
+          padding-top: 7.5 * @hd;
+          box-sizing: border-box;
+          justify-content: space-between;
+          position: relative;
+          .doctor-head-time {
+            font-size: 12 * @hd;
+            color: extract(@blackColor, 12);
+          }
+          img {
+            width: 20 * @hd;
+            height: auto;
+          }
+          .doctor-head-good-modal {
+            min-width: 180 * @hd;
+            min-height: 39 * @hd;
+            position: absolute;
+            background: extract(@blackColor, 13);
+            border-radius: 4 * @hd;
+            right: 40 * @hd;
+            bottom: 2 * @hd;
+            display: flex;
+            align-items: center;
+            .doctor-head-icon-box {
+              flex: 5;
+              min-width: 90 * @hd;
+              box-sizing: border-box;
+              min-height: 20 * @hd;
+              display: flex;
+              color: extract(@whiteColor, 3);
+              font-size: 14 * @hd;
+              justify-content: center;
+              img {
+                width: 16 * @hd;
+                height: auto;
+                margin-right: 5 * @hd;
+                position: relative;
+                top: 3 * @hd;
+              }
+            }
+            .doctor-head-icon-box:first-child {
+              border-right: 1 * @hd solid extract(@blackColor, 3);
+            }
+          }
+        }
+        .doctor-comment-content {
+          background: extract(@whiteColor, 3);
+          margin-right: 12 * @hd;
+          position: relative;
+          .doctor-comment-person-box {
+            padding: 4 * @hd 0;
+            display: flex;
+            align-items: flex-start;
+            border-bottom: 0.5 * @hd solid extract(@blackColor, 7);
+            .doctor-comment-person {
+              flex: 1;
+              font-size: 14 * @hd;
+              font-weight: bold;
+              color: extract(@blueColor, 3);
+              word-wrap: break-word;
+              word-break: normal;
+              line-height: 1.5;
+            }
+            img {
+              width: 15 * @hd;
+              height: auto;
+              align-self: flex-start;
+              margin-top: 7 * @hd;
+              margin-left: 10 * @hd;
+            }
+          }
+          .doctor-comment-person-box::before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: -5 * @hd;
+            width: 0;
+            height: 0;
+            z-index: 2;
+            left: 7 * @hd;
+            border-left: 5 * @hd solid transparent;
+            border-right: 7 * @hd solid extract(@whiteColor, 1);
+            border-bottom: 5 * @hd solid extract(@whiteColor, 3);
+          }
+          .doctor-comment-person-box::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: -5 * @hd;
+            width: 0;
+            height: 0;
+            z-index: 1;
+            left: 7 * @hd;
+            border-left: 5 * @hd solid transparent;
+            border-right: 7 * @hd solid extract(@blackColor, 9);
+            border-bottom: 5 * @hd solid extract(@whiteColor, 3);
+          }
+          .doctor-comment-other-content {
+            background: extract(@whiteColor, 3);
+            padding: 6 * @hd 12 * @hd;
+            line-height: 1.2;
+            min-height: auto;
+            .am-card-header {
+              padding: 0;
+              .am-card-header-content {
+                align-items: flex-start;
+                .doctor-comment-other-card {
+                  flex: 8.14;
+                  display: flex;
+                  padding-left: 7 * @hd;
+                  .doctor-head-lines-comment {
+                    margin-top: 7 * @hd;
+                    font-size: 14 * @hd;
+                    letter-spacing: 1 * @hd;
+                    color: extract(@blackColor, 3);
+                    .doctor-head-lines-name {
+                      font-size: 14 * @hd;
+                      font-weight: bold;
+                      color: extract(@blueColor, 3);
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .am-card-full::after,
+          .am-card-full::before {
+            display: none;
+          }
+        }
+      }
+    }
+    .doctor-head-lines-small:first-child {
+      margin-top: 0;
+    }
+    .doctor-head-lines-year {
+      padding: 64.5 * @hd 12 * @hd 0;
+      font-size: 29 * @hd;
+      font-weight: bold;
+      color: extract(@blackColor, 11);
+    }
+  }
+  .doctor-head-lines-detail {
+    //医生头条详情页
+    margin: 15 * @hd 0 0;
+    .doctor-head-lines-small {
+      display: flex;
+    }
+    .doctor-head-lines-name {
+      font-size: 15 * @hd;
+      font-weight: bold;
+      color: extract(@blueColor, 3);
+    }
+    .doctor-head-person {
+      flex: 1;
+      margin: 0 10 * @hd 0 12 * @hd;
+      align-self: flex-start;
+      min-width: 40 * @hd;
+      min-height: 40 * @hd;
+      background: url('../../assets/images/doctorHeaderPerson.jpg') no-repeat
+        center;
+      background-size: contain;
+    }
+    .doctor-head-right-content {
+      flex: 9;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      .doctor-head-lines-box {
+        margin-top: 10 * @hd;
+        min-height: 50 * @hd;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        margin-right: 12 * @hd;
+        padding: 5 * @hd;
+        background: extract(@whiteColor, 3);
+        .doctor-head-content-img {
+          width: 40 * @hd;
+          height: 40 * @hd;
+          background: url('../../assets/images/doctorHeaderPerson.jpg')
+            no-repeat center;
+          background-size: contain;
+        }
+        .doctor-head-lines-content {
+          flex: 1;
+          padding-left: 6 * @hd;
+          min-height: 40 * @hd;
+          line-height: 1.3;
+          font-size: 15 * @hd;
+          color: extract(@blackColor, 3);
+        }
+      }
+      //点赞评论
+      .doctor-head-time-good {
+        display: flex;
+        margin-right: 12 * @hd;
+        min-height: 39 * @hd;
+        align-items: flex-start;
+        padding-top: 7.5 * @hd;
+        box-sizing: border-box;
+        justify-content: space-between;
+        position: relative;
+        .doctor-head-time {
+          font-size: 12 * @hd;
+          color: extract(@blackColor, 12);
+        }
+        img {
+          width: 20 * @hd;
+          height: auto;
+        }
+        .doctor-head-good-modal {
+          min-width: 180 * @hd;
+          min-height: 39 * @hd;
+          position: absolute;
+          background: extract(@blackColor, 13);
+          border-radius: 4 * @hd;
+          right: 40 * @hd;
+          bottom: 2 * @hd;
+          display: flex;
+          align-items: center;
+          .doctor-head-icon-box {
+            flex: 5;
+            min-width: 90 * @hd;
+            box-sizing: border-box;
+            min-height: 20 * @hd;
+            display: flex;
+            color: extract(@whiteColor, 3);
+            font-size: 14 * @hd;
+            justify-content: center;
+            img {
+              width: 16 * @hd;
+              height: auto;
+              margin-right: 5 * @hd;
+              position: relative;
+              top: 3 * @hd;
+            }
+          }
+          .doctor-head-icon-box:first-child {
+            border-right: 1 * @hd solid extract(@blackColor, 3);
+          }
+        }
+      }
+    }
+    .doctor-comment-content {
+      background: extract(@whiteColor, 3);
+      margin: 0 12 * @hd;
+      .doctor-comment-person-box {
+        min-height: 50 * @hd;
+        padding: 4 * @hd 0;
+        display: flex;
+        align-items: flex-start;
+        .doctor-comment-person {
+          flex: 1;
+          min-height: 50 * @hd;
+          word-wrap: break-word;
+          word-break: normal;
+          img {
+            height: 35 * @hd;
+            width: 35 * @hd;
+            margin: 4 * @hd;
+          }
+        }
+        img {
+          width: 15 * @hd;
+          height: auto;
+          align-self: center;
+          margin-left: 10 * @hd;
+        }
+      }
+      .doctor-comment-other-content {
+        background: extract(@whiteColor, 3);
+        padding: 15 * @hd 12 * @hd;
+        min-height: auto;
+        .am-card-header {
+          padding: 0;
+          .am-card-header-content {
+            align-items: flex-start;
+            .doctor-other-logo-box {
+              display: flex;
+              flex: 1.86;
+              align-items: center;
+              .doctor-comment-icon {
+                width: 15 * @hd;
+                height: auto;
+              }
+              .doctor-other-head-logo {
+                width: 35 * @hd;
+                height: 35 * @hd;
+                margin-left: 9 * @hd;
+              }
+            }
+            .doctor-comment-other-card {
+              flex: 8.14;
+              padding-left: 7 * @hd;
+              .doctor-head-lines-comment {
+                margin-top: 7 * @hd;
+                font-size: 14 * @hd;
+                letter-spacing: 1 * @hd;
+                color: extract(@blackColor, 3);
+              }
+            }
+          }
+          .am-card-header-extra {
+            position: absolute;
+            font-size: 12 * @hd;
+            color: extract(@blackColor, 11);
+            top: 15 * @hd;
+            right: 12 * @hd;
+          }
+        }
+      }
+      .am-card-full::after {
+        display: none;
+      }
+    }
+  }
+  //底部输入框
+  .doctor-comment-input {
+    .doctor-write-box {
+      box-sizing: border-box;
+      display: flex;
+      min-height: 49 * @hd;
+      align-items: flex-end;
+      justify-content: space-between;
+      border-top: 1 * @hd solid extract(@blackColor, 6);
+      border-bottom: 1 * @hd solid extract(@blackColor, 6);
+      .doctor-textinput {
+        margin-left: 5 * @hd;
+        padding: 0 !important;
+        min-height: 36 * @hd;
+        flex: 1;
+        background: extract(@whiteColor, 2);
+        display: flex;
+        margin-bottom: 5 * @hd;
+        .am-list-line {
+          padding: 0 !important;
+        }
+        .am-textarea-control {
+          display: flex;
+          flex: 1;
+          align-items: center;
+          min-height: 36 * @hd;
+          padding: 0;
+          textarea {
+            flex: 1;
+            background: extract(@whiteColor, 1);
+            min-height: 36 * @hd;
+            line-height: 1.2;
+            box-sizing: border-box;
+            padding: 10 * @hd 5 * @hd;
+            border: 1 * @hd solid extract(@blackColor, 6);
+            border-radius: 3 * @hd;
+            overflow-y: hidden;
+          }
+        }
+      }
+      .doctor-icon-bar {
+        min-width: 55 * @hd;
+        display: flex;
+        flex-direction: column;
+        min-height: 49 * @hd;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 28 * @hd;
+          height: 28 * @hd;
+        }
+      }
+    }
+  }
+}

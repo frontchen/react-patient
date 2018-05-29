@@ -1,0 +1,639 @@
+@import './Basic';
+
+@chatImgStyle: 50 * @hd;
+@personImgWidth: 36 * @hd;
+/* fonts */
+@font: '12', '14';
+@fontFamily: 'Microsoft YaHei';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.bgColor_base {
+  background: extract(@blueColor, 2);
+}
+.bgColor_blue5 {
+  background: extract(@blueColor, 5);
+}
+.am-switch {
+  .checkbox {
+    background: extract(@whiteColor, 2);
+  }
+}
+.bgColor_white {
+  background: extract(@whiteColor, 1);
+}
+
+//3行溢出
+
+.ellipsis-mult(@n: 3) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @n;
+  word-break: break-all;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+//单行溢出隐藏
+
+.ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.container {
+  // background-color: @base;
+  overflow: hidden;
+  overflow-y: auto;
+  background-color: extract(@whiteColor, 3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.center_x {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.padding_h12 {
+  padding: 0 12 * @hd;
+}
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+// 搜索
+.search_box {
+  width: 100%;
+  padding: 10 * @hd 0;
+  .search_group {
+    width: 95.7%;
+    height: 36 * @hd;
+    color: extract(@blackColor, 2);
+    line-height: 36 * @hd;
+    .am-search-input {
+      padding-left: 16 * @hd;
+      background-color: extract(@whiteColor, 1);
+
+      border-radius: 5 * @hd;
+      height: 36 * @hd;
+      line-height: 36 * @hd;
+      font-size: 17 * @hd;
+      align-items: center;
+      .am-search-synthetic-ph {
+        height: 36 * @hd;
+        line-height: 36 * @hd;
+        border-image-width: 0;
+      }
+      input[type='search'] {
+        border: none;
+        height: 36 * @hd;
+        font-size: 17 * @hd;
+        text-indent: 2 * @hd;
+
+        color: extract(@blackColor, 3);
+      }
+      .am-search-clear-show {
+        margin-top: 4 * @hd;
+      }
+    }
+  }
+}
+
+//输入框
+.chat-bottom {
+  position: fixed;
+  bottom: 0;
+  background: extract(@whiteColor, 3) !important;
+  width: 100%;
+  touch-action: none;
+  z-index: 1000;
+  .patient-write-box {
+    box-sizing: border-box;
+    display: flex;
+    min-height: 49 * @hd;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-top: 1 * @hd solid extract(@blackColor, 6);
+    border-bottom: 1 * @hd solid extract(@blackColor, 6);
+
+    .patient-chat-sound {
+      height: 49 * @hd;
+      flex: 1.28;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      top: 10 * @hd;
+    }
+    img {
+      width: 28 * @hd;
+      height: 28 * @hd;
+    }
+    .patient-textinput {
+      padding: 0 !important;
+      min-height: 36 * @hd;
+      flex: 6.51;
+      background: extract(@whiteColor, 2);
+      display: flex;
+      margin-bottom: 5 * @hd;
+      .am-list-line {
+        padding: 0 !important;
+      }
+      .am-textarea-control {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        min-height: 36 * @hd;
+        padding: 0;
+        textarea {
+          flex: 1;
+          background: extract(@whiteColor, 1);
+          min-height: 36 * @hd;
+          line-height: 1.2;
+          box-sizing: border-box;
+          padding: 10 * @hd 5 * @hd;
+          border: 1 * @hd solid extract(@blackColor, 6);
+          border-radius: 3 * @hd;
+          overflow-y: hidden;
+        }
+      }
+    }
+    .patient-icon-bar {
+      flex: 2.21;
+      height: 49 * @hd;
+      position: relative;
+      top: 10 * @hd;
+      .patient-icon-smile {
+        margin-left: 10 * @hd;
+      }
+      .patient-icon-add {
+        margin-left: 9 * @hd;
+      }
+    }
+  }
+  .patient-chat-tools {
+    height: 85 * @hd;
+    padding: 0 30 * @hd;
+    box-sizing: border-box;
+    display: flex;
+
+    align-items: center;
+    .patient-chat-photo,
+    .patient-take-photos {
+      width: 45 * @hd;
+      text-align: center;
+      .patient-photo-box {
+        background: #fbfbfd;
+        height: 45 * @hd;
+        width: 45 * @hd;
+        border: 1 * @hd solid extract(@blackColor, 5);
+        border-radius: 10 * @hd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 19 * @hd;
+          height: auto;
+        }
+      }
+    }
+    .patient-take-photos {
+      margin-left: 25 * @hd;
+    }
+    .patient-photo-text {
+      margin-top: 7 * @hd;
+      font-size: 12 * @hd;
+      color: extract(@blackColor, 4);
+    }
+  }
+}
+
+//预约按钮
+.price_button {
+  display: block;
+  width: 74 * @hd;
+  height: 24 * @hd;
+  font-size: 14 * @hd;
+  color: extract(@whiteColor, 1);
+  background: extract(@blueColor, 2);
+  line-height: 24 * @hd;
+}
+//删除按钮
+.patient-delete-btn {
+  margin: 30 * @hd 12 * @hd;
+}
+//可约医生列表
+.doctor-list-item {
+  margin-top: 10 * @hd;
+  width: 100%;
+  box-sizing: content-box;
+  display: inline-block;
+  .am-card {
+    padding: 0;
+    .am-card-header {
+      padding: 0;
+      padding-left: 12 * @hd;
+      img {
+        width: 50 * @hd;
+        height: 50 * @hd;
+        border-radius: 5 * @hd;
+        margin-top: 15 * @hd;
+      }
+      .am-card-header-content {
+        align-items: flex-start;
+        .doctor-history-cart {
+          box-sizing: border-box;
+          margin-top: 20 * @hd;
+          flex: 1;
+          padding-bottom: 14 * @hd;
+          border-bottom: 1 * @hd solid extract(@whiteColor, 2);
+          line-height: 1.5;
+
+          .doctor-card-box {
+            padding: 0 12 * @hd;
+            display: inline-block;
+            .doctor-name,
+            .doctor-good-at,
+            .doctor-call-date {
+              min-width: 56 * @hd;
+            }
+
+            .doctor-job-name {
+              font-size: 14 * @hd;
+              color: extract(@blackColor, 2);
+              padding-left: 10 * @hd;
+            }
+            .doctor-good-at,
+            .doctor-call-date {
+              font-size: 14 * @hd;
+              color: extract(@blackColor, 3);
+            }
+            .doctor-good-contents,
+            .doctor-date-contents,
+            .doctor-job-box {
+              .ellipsis();
+
+              font-size: 14 * @hd;
+              color: extract(@blackColor, 2);
+            }
+            .doctor-good-contents {
+              padding-left: 9.5 * @hd;
+            }
+            .doctor-date-contents {
+              padding-left: 10 * @hd;
+            }
+          }
+        }
+      }
+    }
+    .am-card-body {
+      min-height: 44 * @hd;
+      line-height: 44 * @hd;
+      padding: 0;
+
+      background: extract(@whiteColor, 1);
+      .doctor-price-button {
+        padding-left: 63 * @hd;
+        padding-right: 12 * @hd;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+    .am-card-body:before,
+    .card-full:after {
+      display: none;
+    }
+  }
+}
+
+//患友群选项--群名称
+.patient-person-list {
+  font-family: @fontFamily;
+  .am-list-body::before {
+    height: 0;
+  }
+  .am-list-body,
+  .am-list-header {
+    font-size: 17 * @hd;
+    color: extract(@blackColor, 3);
+  }
+  .am-list-body {
+    margin-left: 12 * @hd;
+    padding-right: 12 * @hd;
+    .am-list-item {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .am-list-line-multiple {
+      padding: 0;
+    }
+
+    .am-list-content {
+      flex: 4;
+    }
+    .am-list-extra {
+      flex: 6;
+      flex-basis: 0%;
+      font-size: 15 * @hd;
+      color: extract(@blackColor, 4);
+    }
+  }
+}
+//患友群选项--群公告
+.patient-group-inform {
+  display: inline-block;
+  padding: 15 * @hd 0;
+  margin-left: 12 * @hd;
+  padding-right: 12 * @hd;
+  touch-action: none;
+
+  .patient-group-title {
+    height: 30 * @hd;
+    font-size: 17 * @hd;
+    color: extract(@blackColor, 3);
+  }
+  .patient-group-content {
+    font-size: 15 * @hd;
+    color: extract(@blackColor, 4);
+  }
+}
+//医生留言查询记录
+.patient-chat-history(@height:71 * @hd) {
+  //card
+  padding-left: 12 * @hd;
+  .am-card-full {
+    padding: 0;
+    min-height: @height;
+  }
+  .am-card-header {
+    padding: 0;
+    margin: 10 * @hd 0 15 * @hd;
+    .am-card-header-content {
+      align-items: flex-start;
+      .patient-history-cart {
+        padding-left: 11 * @hd;
+        .patient-nickname {
+          font-style: 17 * @hd;
+          color: extract(@blackColor, 3);
+        }
+        .patient-history-content {
+          font-size: 14 * @hd;
+          color: extract(@blackColor, 2);
+          margin-top: 10 * @hd;
+          padding-right: 12 * @hd;
+        }
+      }
+
+      img {
+        min-height: 45 * @hd !important;
+        min-width: 45 * @hd !important;
+        height: 45 * @hd !important;
+        width: 45 * @hd !important;
+        border-radius: 5 * @hd;
+      }
+    }
+    .am-card-header-extra {
+      position: absolute;
+      right: 12 * @hd;
+      top: 10 * @hd;
+      font-size: 12 * @hd;
+      color: extract(@blackColor, 2);
+    }
+  }
+  .am-card.am-card-full::before {
+    display: none;
+  }
+  //list
+  .am-list-item {
+    padding: 0 12 * @hd;
+    padding-top: 10 * @hd;
+    align-items: stretch;
+    .am-list-thumb:first-child {
+      margin-right: 11 * @hd;
+    }
+    .am-list-line-multiple {
+      padding: 0;
+    }
+    .am-list-brief {
+      .ellipsis-mult(@n: 3);
+    }
+
+    img {
+      height: 45 * @hd;
+      width: 45 * @hd;
+      border-radius: 5 * @hd;
+    }
+  }
+  .spe {
+    flex-basis: initial;
+  }
+}
+
+/***********************群聊页面********************/
+.im-chat {
+  .patient-diague {
+    padding: 10 * @hd 12 * @hd 49 * @hd;
+
+    li {
+      padding: 8 * @hd 0;
+      overflow: hidden;
+      .patient-dialogue-box {
+        margin: 0 50 * @hd;
+        position: relative;
+        height: auto;
+        .patient-chat-name {
+          color: extract(@blackColor, 3);
+          margin-bottom: 5px;
+        }
+        .patient-dialogue-content:before {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          top: 16 * @hd;
+          width: 0;
+          height: 0;
+          z-index: 2;
+        }
+      }
+      .patient-dialogue-content:after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        z-index: 1;
+        top: 16 * @hd;
+      }
+      .patient-dialogue-content {
+        // border: 1 * @hd solid #ddd;
+        flex: 1;
+        background: extract(@whiteColor, 1);
+        height: auto;
+        min-height: 40 * @hd;
+        position: relative;
+        padding: 5 * @hd 10 * @hd;
+        box-sizing: border-box;
+        border-radius: 4 * @hd;
+        font-size: 16 * @hd;
+        display: inline-block;
+        line-height: 1.5;
+      }
+    }
+    .patient-other-side {
+      .patient-img-box {
+        float: left;
+        img {
+          width: 40 * @hd;
+          height: 40 * @hd;
+          border-radius: 3 * @hd;
+        }
+      }
+      .patient-dialogue-box {
+        text-align: left;
+        .patient-dialogue-content:before {
+          left: -7 * @hd;
+          border-top: 5 * @hd solid transparent;
+          border-right: 7 * @hd solid extract(@whiteColor, 1);
+          border-bottom: 5 * @hd solid transparent;
+        }
+        .patient-dialogue-content:after {
+          left: -8 * @hd;
+          border-top: 5 * @hd solid transparent;
+          border-right: 7 * @hd solid extract(@blackColor, 9);
+          border-bottom: 5 * @hd solid transparent;
+        }
+      }
+    }
+    .patient-oneself {
+      .patient-img-box {
+        float: right;
+        img {
+          width: 40 * @hd;
+          height: 40 * @hd;
+          border-radius: 3 * @hd;
+        }
+      }
+      .patient-dialogue-box {
+        text-align: right;
+        .patient-dialogue-content {
+          text-align: left;
+          background-color: #9ee75a;
+        }
+        .patient-dialogue-content:before {
+          right: -7 * @hd;
+          border-top: 5 * @hd solid transparent;
+          border-left: 7 * @hd solid #9ee75a;
+          border-bottom: 5 * @hd solid transparent;
+        }
+        .patient-dialogue-content:after {
+          right: -8 * @hd;
+          border-top: 5 * @hd solid transparent;
+          border-left: 7 * @hd solid #9ee75a;
+          border-bottom: 5 * @hd solid transparent;
+        }
+      }
+    }
+    .patient-datetime {
+      text-align: center;
+      font-size: 14 * @hd;
+
+      .patient-time {
+        display: inline-block;
+        background: #d0d0d0;
+        color: extract(@whiteColor, 1);
+        border-radius: 4 * @hd;
+        padding: 3 * @hd 5 * @hd;
+        max-width: 225 * @hd;
+        .patient-newname {
+          background: #d0d0d0;
+          color: rgb(77, 150, 247);
+        }
+      }
+      .patient-newjoin {
+        text-align: left;
+        background: #d0d0d0;
+        line-height: 18 * @hd;
+        color: extract(@whiteColor, 1);
+        border-radius: 4 * @hd;
+        padding: 3 * @hd 10 * @hd;
+        line-height: 1.5;
+        margin: 0 50 * @hd;
+      }
+    }
+  }
+
+  .patient-total-icon {
+    position: fixed;
+    top: 10 * @hd;
+    right: 10 * @hd;
+    img {
+      height: 44 * @hd;
+      width: 44 * @hd;
+    }
+  }
+}
+/***********************搜索结果页********************/
+.search-pages {
+  background: extract(@whiteColor, 1);
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+
+  .search_box {
+    border-bottom: 1px solid extract(@whiteColor, 3);
+    .search_group {
+      padding: 0;
+      margin: 0 8px;
+      .am-search-input {
+        background-color: extract(@whiteColor, 3);
+      }
+      .am-search-cancel {
+        background: extract(@whiteColor, 1);
+      }
+    }
+  }
+  .search-list {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+//去约医生-医生列表搜索
+.search-appoint-list {
+  background: extract(@whiteColor, 3);
+  .search_box {
+    border-bottom: 1px solid extract(@whiteColor, 3);
+    .search_group {
+      padding: 0;
+      margin: 0 8px;
+      .am-search-input {
+        background-color: extract(@whiteColor, 1);
+      }
+      .am-search-cancel {
+        background: extract(@whiteColor, 3);
+      }
+    }
+  }
+}

@@ -1,0 +1,213 @@
+@import '../../styles/Base.less';
+.am-card.am-card-full::before {
+  display: none !important;
+}
+
+.doctor-history-list {
+  width: 100%;
+  min-height: 71 * @hd;
+  .am-card-header {
+    min-height: 71 * @hd;
+    margin: 0;
+    padding: 10 * @hd;
+    box-sizing: border-box;
+    position: relative;
+    .am-card-header-content {
+      display: flex;
+      .dk-avatar {
+        align-self: flex-start;
+      }
+      .patient-history-cart {
+        flex: 1;
+        margin-left: 10 * @hd;
+        display: flex;
+        flex-direction: column;
+        .patient-nickname {
+          font-size: 17 * @hd;
+          color: extract(@blackColor, 3);
+        }
+        .patient-history-content {
+          margin-top: 10 * @hd;
+          font-size: 14 * @hd;
+          color: extract(@blackColor, 2);
+          flex: 1;
+        }
+      }
+    }
+    .am-card-header-extra {
+      font-size: 13 * @hd;
+      color: extract(@blackColor, 2);
+    }
+    .am-card-header-extra {
+      position: absolute;
+      right: 12 * @hd;
+      top: 12 * @hd;
+    }
+  }
+}
+
+.card-item {
+  width: 100%;
+  margin-top: 0 !important;
+  min-height: 67* @hd;
+  box-sizing: border-box;
+  position: relative;
+  .am-card {
+    min-height: 67* @hd;
+    .am-card-header {
+      min-height: 67 * @hd;
+      padding: 0;
+      .am-card-header-content {
+        min-height: 67 * @hd;
+        padding-left: 12 * @hd;
+        .doctor-history-cart {
+          padding-right: 20 * @hd;
+          min-height: 67 * @hd;
+          margin-left: 10 * @hd;
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          border-bottom: 1 * @hd solid extract(@whiteColor, 3);
+        }
+        .doctor-card-box {
+          display: flex;
+          font-size: 15 * @hd;
+          color: extract(@blackColor, 2);
+          .doctor-job-box {
+            margin-left: 10 * @hd;
+          }
+          .doctor-good-contents {
+            margin-left: 10 * @hd;
+            padding-right: 18 * @hd;
+            flex: 1;
+            width: 0;
+          }
+          .doctor-name {
+            font-size: 17 * @hd;
+            color: extract(@blackColor, 3);
+          }
+        }
+        .doctor-card-box:last-child {
+          margin-top: 10 * @hd;
+        }
+        .doctor-card-box:first-child {
+          .doctor-job-name {
+            padding-top: 1px;
+          }
+        }
+      }
+    }
+  }
+  .am-card-full::before,
+  .am-card-full::after {
+    display: none;
+    height: 0 !important;
+  }
+}
+
+.doctor-list-info {
+  margin-top: 10px;
+  min-height: 139 * @hd;
+  .am-card-full::after {
+    height: 0 !important;
+  }
+  .am-card {
+    min-height: 139 * @hd;
+    padding: 0;
+    .am-card-header {
+      padding: 0;
+      min-height: 95 * @hd;
+      .am-card-header-content {
+        min-height: 95 * @hd;
+        .dk-avatar {
+          margin-left: 12px;
+          align-self: flex-start;
+          margin-top: 14px;
+        }
+        .doctor-history-cart {
+          display: flex;
+          flex-direction: column;
+          margin-left: 10px;
+          padding-right: 12px;
+          flex: 1;
+          .doctor-card-box {
+            display: flex;
+            margin-top: 10px;
+            padding: 0;
+            .doctor-name,
+            .doctor-good-at,
+            .doctor-call-date {
+              flex: 3;
+              max-width: 70px;
+              color: extract(@blackColor, 3);
+            }
+            .doctor-name {
+              font-size: 17px;
+              font-weight: bold;
+            }
+            .doctor-good-at,
+            .doctor-call-date {
+              font-size: 14px;
+            }
+
+            .doctor-job-box,
+            .doctor-good-contents {
+              flex: 7;
+              font-size: 14px;
+              color: extract(@blackColor, 2);
+              width: 0;
+              .ellipsis();
+            }
+            .doctor-job-box {
+              display: flex;
+              .doctor-job-name {
+                padding-top: 1px;
+              }
+              .ellipsis();
+            }
+          }
+          .doctor-card-box:first-child {
+            margin-top: 0;
+            .doctor-job-name {
+              padding-top: 2px;
+            }
+          }
+          .doctor-card-box:last-child {
+            .doctor-job-name {
+              margin-left: 10px;
+            }
+            .doctor-job-name:first-child {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+    .am-card-body {
+      min-height: 44px;
+      margin-left: 78px;
+      padding: 0;
+
+      padding-right: 12px;
+      .doctor-price-button {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .doctor-price {
+          font-size: 13px;
+          color: extract(@blackColor, 3);
+        }
+      }
+    }
+  }
+  .doctor-name {
+    font-weight: bold;
+    font-size: 17 * @hd;
+    color: extract(@blackColor, 3);
+  }
+}
+.doctor-list-info:first-child {
+  margin-top: 0;
+}

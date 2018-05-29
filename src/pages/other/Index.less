@@ -1,0 +1,40 @@
+@import '../../styles/Base.less';
+
+.fill-info {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  .inputitem {
+    margin-top: 10 * @hd;
+  }
+  .fill-info-btn {
+    margin-top: 10 * @hd;
+    background: extract(@whiteColor, 1);
+    flex: 1;
+    display: flex;
+    padding: 0 15 * @hd;
+    align-items: flex-end;
+    .am-button {
+      flex: 1;
+      margin-bottom: 50 * @hd;
+    }
+  }
+  .listitem {
+    margin-top: 10 * @hd;
+    .am-list-line {
+      .am-checkbox-inner {
+        border: none;
+      }
+      .am-checkbox-checked {
+        .am-checkbox-inner {
+          border: none;
+          background: extract(@whiteColor, 1);
+        }
+        .am-checkbox-inner:after {
+          border-color: extract(@blueColor, 1);
+        }
+      }
+    }
+  }
+}
